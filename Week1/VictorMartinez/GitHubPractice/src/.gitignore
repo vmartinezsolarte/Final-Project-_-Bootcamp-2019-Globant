@@ -1,3 +1,5 @@
 *.class
 *.swp
 *.save
+classHelloWorld.class
+printHelloWorld.class

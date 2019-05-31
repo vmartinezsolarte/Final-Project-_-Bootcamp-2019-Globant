@@ -5,7 +5,7 @@ public class printHelloWorld{
 
 	public static void main(String []args){
 
-	classHelloWorld.printHelloWorld4();
+	System.out.println(classHelloWorld.printHelloWorld4());
 
 	}
 

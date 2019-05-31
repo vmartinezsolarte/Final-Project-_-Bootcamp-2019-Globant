@@ -29,8 +29,9 @@ class classHelloWorld{
 	}	
 	*/
 
-	static void printHelloWorld4(){
-		printHelloWorld2("Mr. Constantine");
+	static int printHelloWorld4(){
+		//printHelloWorld2("Mr. Constantine");
+		return genNum();
 	}
 
 
