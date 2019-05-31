@@ -31,6 +31,19 @@ dependencies {
 // Define the main class for the application
 mainClassName = 'HelloWorld.App'
 
+task counter{
+	doLast{
+	4.times{ println "hello"}
+	}
+}
+
+task hello {
+	doLast{
+	println "HelloWorld"
+	}
+
+
+}
 task upper{
 	String saySomethingCute =" tiny and cute"
 	doLast{
@@ -38,3 +51,6 @@ task upper{
 		println "I mean it, really ${saySomethingCute.toUpperCase()}" 
 	}
 }
+
+
+
