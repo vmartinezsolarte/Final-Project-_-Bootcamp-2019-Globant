@@ -32,6 +32,7 @@ dependencies {
 // Define the main class for the application
 mainClassName = 'HelloWorld.App'
 
+
 task hello{
 	doLast{
 	println "Hello World"
@@ -64,7 +65,7 @@ task upper{
 	}
 	
 }*/
-
+/*
 6.times {
 	counter ->
 		task "task$counter"{
@@ -74,10 +75,31 @@ task upper{
 		}
 	}
 	task0.dependsOn task5, task4
+*/
 
+task hello2 {
+	doLast{
+		println "Hello Earth"
+		}
+}
 
+hello2.doFirst{
+	
+	println "Hello Venus"
+	
+}
 
+hello2.configure{
+	doLast{
+		println "Hello Jupyter"	
+	}
+}
 
+hello2.configure{
+	doLast{
+		println "Hello Pluto"
+	}
+}
 
 
 
