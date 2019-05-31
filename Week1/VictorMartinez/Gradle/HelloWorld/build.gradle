@@ -31,8 +31,10 @@ dependencies {
 // Define the main class for the application
 mainClassName = 'HelloWorld.App'
 
-task hello{
+task upper{
+	String saySomethingCute =" tiny and cute"
 	doLast{
-		println "Hello World"
+		println "You're so ${saySomethingCute}"
+		println "I mean it, really ${saySomethingCute.toUpperCase()}" 
 	}
 }
