@@ -30,20 +30,20 @@ dependencies {
 
 // Define the main class for the application
 mainClassName = 'HelloWorld.App'
+task hello{
+	doLast{
+	println "Hello World"
+	}
+}
+
 
 task counter{
+	dependsOn hello
 	doLast{
-	4.times{ println "hello"}
+	println "and to you too"
 	}
 }
 
-task hello {
-	doLast{
-	println "HelloWorld"
-	}
-
-
-}
 task upper{
 	String saySomethingCute =" tiny and cute"
 	doLast{
