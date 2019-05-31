@@ -33,8 +33,6 @@ class classHelloWorld{
 		//printHelloWorld2("Mr. Constantine");
 		return genNum();
 	}
-
-
 	static void printHelloWorld2(){
 		System.out.println(intro + source);
 	}
