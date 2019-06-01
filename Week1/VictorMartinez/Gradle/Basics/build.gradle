@@ -31,6 +31,8 @@ dependencies {
 // Define the main class for the application
 mainClassName = 'Basics.App'
 
+defaultTasks 'goodBye'
+
 task checksum{
 	doLast{
 		fileList("./antLoadResources").each{File file->
@@ -51,4 +53,19 @@ task loadfile{
 
 File[] fileList(String dir){
 	file(dir).listFiles({file->file.isFile()}as FileFilter).sort()
+}
+
+
+task hello{
+
+	doLast{
+		println "Hello Everybody"
+	}
+}
+
+task goodBye{
+
+	doFirst{
+		println "Nice to see you"
+	}
 }
