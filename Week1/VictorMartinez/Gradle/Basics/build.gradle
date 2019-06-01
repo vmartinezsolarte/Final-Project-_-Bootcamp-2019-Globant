@@ -31,41 +31,25 @@ dependencies {
 // Define the main class for the application
 mainClassName = 'Basics.App'
 
-defaultTasks 'goodBye'
-
-task checksum{
-	doLast{
-		fileList("./antLoadResources").each{File file->
-		ant.checksum(file: file, property: "cs_$filename")
-		println "$file.name Checksum: ${ant.properties["cs_$file.name"]}"
-		}
-	}
-}
-
-task loadfile{
-	doLast{
-		fileList("./antLoadResources").each{File file ->
-		ant.loadfile(srcFile:file, property:file.name)
-		println "It's the $file.name"
-		}
-	}
-}
-
-File[] fileList(String dir){
-	file(dir).listFiles({file->file.isFile()}as FileFilter).sort()
-}
-
-
-task hello{
+task greeting{
 
 	doLast{
-		println "Hello Everybody"
+		println "Hello everybody"
 	}
 }
 
 task goodBye{
+	dependsOn 'greeting'
+	doLast{
+		println "Goodbye everybody"
+	}
+}
 
-	doFirst{
-		println "Nice to see you"
+
+gradle.taskGraph.whenReady{taskGraph->
+	if(taskGraph.hasTask(":greeting2")){
+		println " Salutation for good education"
+	} else{
+		println " Normal social interaction"
 	}
 }
