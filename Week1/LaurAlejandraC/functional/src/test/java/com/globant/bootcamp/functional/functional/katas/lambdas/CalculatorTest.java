@@ -10,21 +10,23 @@ import static org.hamcrest.Matchers.is;
 
 public class CalculatorTest {
 
-    private BinaryOperator<Integer> fakeBinaryOperator = (b,a) -> (0);
+    private BinaryOperator<Integer> sumOperator = (a, b) -> (a + b);
+    private BinaryOperator<Integer> subtractOperator = (a, b) -> (a - b);
+    private BinaryOperator<Integer> multiplyOperator = (a, b) -> (a * b);
 
     @Test
     public void sum() {
-        Assert.assertThat(Calculator.execute(fakeBinaryOperator,3,4),is(7));
+        Assert.assertThat(Calculator.execute(sumOperator,3,4),is(7));
     }
 
     @Test
     public void subtract() {
-        Assert.assertThat(Calculator.execute(fakeBinaryOperator,4,3),is(1));
+        Assert.assertThat(Calculator.execute(subtractOperator,4,3),is(1));
     }
 
     @Test
     public void multiply() {
-        Assert.assertThat(Calculator.execute(fakeBinaryOperator,4,3),is(12));
+        Assert.assertThat(Calculator.execute(multiplyOperator,4,3),is(12));
     }
 
 }
