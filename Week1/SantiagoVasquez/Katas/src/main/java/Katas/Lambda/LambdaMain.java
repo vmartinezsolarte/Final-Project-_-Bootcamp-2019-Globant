@@ -1,4 +1,4 @@
-package Katas.lambda;
+package Katas.Lambda;
 
 import java.util.function.BinaryOperator;
 
