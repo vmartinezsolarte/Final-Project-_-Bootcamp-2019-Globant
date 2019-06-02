@@ -1,25 +1,31 @@
 package com.globant.bootcamp.functional.functional.katas.lambdas.templatemethod;
 
+import java.util.function.Function;
+
 public class Printer {
 
 
-    public static String printMessage(String message){
+    public static String printMessage(String message, Function<String, String> decorator){
         String messageToPrint = message.trim().toUpperCase();
-        preparePapel();
-        messageToPrint = decorateMessage(messageToPrint);
-        printMessageBrand1(messageToPrint);
-        turnOffPrinter();
+
+        try{
+            preparePaper();
+            messageToPrint = decorator.apply(messageToPrint);
+            printMessageBrand1(messageToPrint) ;
+        }
+        catch (Exception ex){
+            System.err.println("Fail to apply decorator due to: " + ex.getMessage());
+        }
+        finally {
+            turnOffPrinter();
+        }
 
         return messageToPrint;
     }
 
 
-    private static void preparePapel() {
-        System.out.println("preparePapel");
-    }
-
-    private static String decorateMessage(String messageToPrint) {
-        return  String.format(" %s message decorated with %s",messageToPrint," ********* ") ;
+    private static void preparePaper() {
+        System.out.println("preparePaper");
     }
 
     private static void printMessageBrand1(String messageToPrint) {
