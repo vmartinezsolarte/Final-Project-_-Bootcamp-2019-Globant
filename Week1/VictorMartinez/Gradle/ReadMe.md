@@ -4,5 +4,5 @@
              
         - HelloWorld & Basics : Ejemplos de creación de tareas a partir del build.gradle, sólo por consola :'(
         - Homework  : Intento de multiproyecto y posterior muerte.
-        - Homework2 : Multiproyecto aún sin la parte de Spring.
+        - Homework2 : Multiproyecto ya con la parte de Spring incorporada -dependencia de SonarCube Analysis incluida pero sin usp.
         
