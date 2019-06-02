@@ -29,33 +29,5 @@ dependencies {
 }
 
 // Define the main class for the application
-mainClassName = 'userInfo.App'
-
-class userInfo extends DefaultTask{
-
-	def userName = "Pepito Perez"
-	def passWord = "******"	
-
-	@TaskAction
-	def newUser(){
-		println "New USer"	
-	}
-
-	String getUserName(){
-	return userName;
-	}
-
-	String getPassWord(){
-	return passWord;
-	}
-}
-
-task printUser(type: userInfo){
-
-	doLast{ println "-----UserInfo------"
-	 	println "Username: ${userName}"
-		println "PassWord: ${passWord}"
-	}
-}
-
+mainClassName = 'Login.App'
 

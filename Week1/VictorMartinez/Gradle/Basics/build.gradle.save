@@ -29,33 +29,22 @@ dependencies {
 }
 
 // Define the main class for the application
-mainClassName = 'userInfo.App'
+mainClassName = 'Basics.App'
 
-class userInfo extends DefaultTask{
-
-	def userName = "Pepito Perez"
-	def passWord = "******"	
-
-	@TaskAction
-	def newUser(){
-		println "New USer"	
-	}
-
-	String getUserName(){
-	return userName;
-	}
-
-	String getPassWord(){
-	return passWord;
-	}
+task hello{
+	ext.myName= "Mikey"
+		
+	
 }
 
-task printUser(type: userInfo){
-
-	doLast{ println "-----UserInfo------"
-	 	println "Username: ${userName}"
-		println "PassWord: ${passWord}"
-	}
+hello.doLast{
+	println "Hello ${hello.myName}"
 }
 
+task checksum{
+	doLast{
+		fileList(.//home/rocks/Documents/Programming/Bootcamp2019/bootcamp-java-spring-may-2019/Week1/VictorMartinezSola/gradle
+
+	}
+}
 
