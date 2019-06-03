@@ -11,64 +11,69 @@ import java.util.regex.*;
 public class NoteMagazine {
 	// Complete the checkMagazine function below.
 	static void checkMagazine(String[] magazine, String[] note) {
-		int repeated []= new int[magazine.length];
-		for(int i =0; i<note.length;i++) {
-			for(int j =0; j<magazine.length;j++) {
-				if(note[i]==magazine[j]) {
-					for(int k =0; k<repeated.length;k++) {
-						if(repeated[i]==j) {
-							break;
-						}
+		if ((magazine.length < 1 || note.length < 1) && (magazine.length > 5 || note.length > 5)) {
+			System.out.println("No");
+		} else {
+			int isWord[] = new int[note.length];
+			int tempValue = 0;
+			for (int i = 0; i < note.length; i++) {
+				for (int j = 0; j < magazine.length; j++) {
+					System.out.println(note[i] + "-" + magazine[j]);
+					if (note[i].contentEquals(magazine[j])) {
+						isWord[i] = 1;
+						magazine[i] = " ";
+						break;
 					}
-					repeated[i]=j;
-				};
+				}
+			}
+			print(isWord);
+			for (int i = 0; i < isWord.length; i++) {
+				tempValue += isWord[i];
+			}
+			if (tempValue == note.length) {
+				System.out.println("yes");
+			} else {
+				System.out.println("no");
 			}
 		}
-		print(repeated);
-		if(repeated.length==note.length) {
-			System.out.println("Yes");
-		}else {
-			System.out.println("False");
-		}
-		
-		
 	}
+
 	static void print(String[] element) {
-		for(int i=0; i<element.length;i++) {
-			System.out.print(element[i]+" ");
+		for (int i = 0; i < element.length; i++) {
+			System.out.print(element[i] + " ");
 		}
 		System.out.println("");
 	}
+
 	static void print(int[] element) {
-		for(int i=0; i<element.length;i++) {
-			System.out.print(element[i]+" ");
+		for (int i = 0; i < element.length; i++) {
+			System.out.print(element[i] + " ");
 		}
 		System.out.println("");
 	}
+
 	private static final Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		//String[] mn = scanner.nextLine().split(" ");
+		 String[] mn = scanner.nextLine().split(" ");
 
-		//int m = Integer.parseInt(mn[0]);
-		int m = 6;
-		//int n = Integer.parseInt(mn[1]);
-		int n = 4;
-		String[] magazine = new String[m];
+		 int m = Integer.parseInt(mn[0]);
+		
+		 int n = Integer.parseInt(mn[1]);
+		
+		 String[] magazine = new String[m];
 
-		//String[] magazineItems = scanner.nextLine().split(" ");
-		String[] magazineItems = "give me one grand today night".split(" ");
-		//scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-	
+		 String[] magazineItems = scanner.nextLine().split(" ");
+		 scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
 		for (int i = 0; i < m; i++) {
 			String magazineItem = magazineItems[i];
 			magazine[i] = magazineItem;
 		}
 
 		String[] note = new String[n];
-		String[] noteItems = "give one grand today".split(" ");
-		//	String[] noteItems = scanner.nextLine().split(" ");
-		//scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+		String[] noteItems = scanner.nextLine().split(" ");
+		scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
 		for (int i = 0; i < n; i++) {
 			String noteItem = noteItems[i];
@@ -77,8 +82,6 @@ public class NoteMagazine {
 
 		checkMagazine(magazine, note);
 
-	//	scanner.close();
+		scanner.close();
 	}
 }
-
-

@@ -26,5 +26,7 @@
 
 
 
+### Aditional : HackerRank - Ransom Note
 
-
+###### Se muestran dos soluciones al ejercicio de HackerRank, dónde se utiliza HashMap y otra solución básica. 
+	
