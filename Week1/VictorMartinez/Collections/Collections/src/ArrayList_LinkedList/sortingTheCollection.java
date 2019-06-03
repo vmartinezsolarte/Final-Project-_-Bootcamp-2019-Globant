@@ -8,6 +8,26 @@ import java.util.List;
 
 import HashTables.auxfunctions;
 import LIST.auxObject;
+//
+//sortingElement Test: ArrayList vs LinkedList     Time Results after Sorting the Collection.
+//Starting Test
+//
+//Integer : ArrayList and LinkedList
+//Time Integer ArrayList : 16506596 us
+//Time Integer LinkedList : 20862921 us
+//
+//String : ArrayList and LinkedList
+//Time String ArrayList : 23248737 us
+//Time String LinkedList : 26020507 us
+//
+//Object : ArrayList and LinkedList
+//Time Integer ArrayList : 26811431 us
+//Time Integer LinkedList : 27888732 us
+//
+//End Test
+//
+
+
 
 public class sortingTheCollection {
 	
