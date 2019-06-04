@@ -14,17 +14,17 @@ public class CalculatorTest {
 
     @Test
     public void sum() {
-        Assert.assertThat(Calculator.execute(fakeBinaryOperator,3,4),is(7));
+        Assert.assertThat(Calculator.execute(((a,b)->a+b),3,4),is(7));
     }
 
     @Test
     public void subtract() {
-        Assert.assertThat(Calculator.execute(fakeBinaryOperator,4,3),is(1));
+        Assert.assertThat(Calculator.execute(((a,b)->a-b),4,3),is(1));
     }
 
     @Test
     public void multiply() {
-        Assert.assertThat(Calculator.execute(fakeBinaryOperator,4,3),is(12));
+        Assert.assertThat(Calculator.execute(((a,b)->a*b),4,3),is(12));
     }
 
 }

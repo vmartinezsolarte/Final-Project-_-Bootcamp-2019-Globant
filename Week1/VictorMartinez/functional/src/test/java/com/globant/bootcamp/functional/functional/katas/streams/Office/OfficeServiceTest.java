@@ -1,11 +1,14 @@
 package com.globant.bootcamp.functional.functional.katas.streams.Office;
 
+
 import com.globant.bootcamp.functional.functional.katas.streams.Office.domain.Element;
 import com.globant.bootcamp.functional.functional.katas.streams.Office.domain.Office;
 import com.globant.bootcamp.functional.functional.katas.streams.Office.domain.Table;
+import com.globant.bootcamp.functional.functional.katas.streams.Office.OfficeService;
+import junit.framework.Assert;
+
 import org.junit.Before;
 import org.junit.Test;
-
 import java.util.Arrays;
 
 public class OfficeServiceTest {
@@ -24,6 +27,8 @@ public class OfficeServiceTest {
 
     @Test
     public void first7ElementsOrdered() {
-        // code goes here !
+    	OfficeService service = new OfficeService();
+    	service.print7Elements(service.retrieveAllElements(office));
+    	
     }
 }
