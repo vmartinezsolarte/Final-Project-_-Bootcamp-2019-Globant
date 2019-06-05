@@ -8,7 +8,7 @@ public class Streams {
 
 
     @Test
-    public void stream1() {
+    public static void stream1() {
 
         System.out.println(Arrays.asList("juan","pedro","juan","trump").stream().distinct().map(a -> a+"yahoo").count());
         Arrays.asList("juan","pedro","juan","trump").stream()
