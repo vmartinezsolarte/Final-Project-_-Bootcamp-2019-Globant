@@ -1,5 +1,6 @@
 package com.globant.bootcamp.spring.springcore.configuration;
 
+import com.globant.bootcamp.spring.springcore.data.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -21,4 +22,8 @@ public class BeansConfiguration {
         return new Score(0, "I'm a prototype bean");
     }
 
+    @Bean
+    public DataSource dataSource(){
+        return new DataSource();
+    }
 }
