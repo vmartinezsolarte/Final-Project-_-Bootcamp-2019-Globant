@@ -1,0 +1,16 @@
+{
+  "id" : "8b9ad99d-9eca-415b-8ed9-7ba62f0d9283",
+  "request" : {
+    "url" : "/customer/id/3",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Gutierrez\",\"name\":\"Daniel\",\"id\":3}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "8b9ad99d-9eca-415b-8ed9-7ba62f0d9283"
+}

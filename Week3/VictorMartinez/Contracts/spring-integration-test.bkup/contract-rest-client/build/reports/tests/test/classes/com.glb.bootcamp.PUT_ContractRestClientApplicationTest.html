@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.glb.bootcamp.PUT_ContractRestClientApplicationTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.glb.bootcamp.PUT_ContractRestClientApplicationTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.glb.bootcamp.html">com.glb.bootcamp</a> &gt; PUT_ContractRestClientApplicationTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">1</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.779s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="update_customer_from_service_contract_by_id"></a>
+<h3 class="failures">update_customer_from_service_contract_by_id</h3>
+<span class="code">
+<pre>org.springframework.web.client.ResourceAccessException: I/O error on PUT request for &quot;http://localhost:8100/customer/5&quot;: Unexpected end of file from server; nested exception is java.net.SocketException: Unexpected end of file from server
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:744)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:670)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:579)
+	at com.glb.bootcamp.PUT_ContractRestClientApplicationTest.update_customer_from_service_contract_by_id(PUT_ContractRestClientApplicationTest.java:69)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.evaluate(StubRunnerRule.java:74)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:117)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.SocketException: Unexpected end of file from server
+	at java.base/sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:862)
+	at java.base/sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:689)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1604)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1509)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at org.springframework.http.client.SimpleClientHttpResponse.getRawStatusCode(SimpleClientHttpResponse.java:55)
+	at org.springframework.web.client.DefaultResponseErrorHandler.hasError(DefaultResponseErrorHandler.java:55)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:766)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:736)
+	... 61 more
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="failures">update_customer_from_service_contract_by_id</td>
+<td class="failures">0.779s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2019-06-13 20:55:07.630  INFO 28818 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.glb.bootcamp.PUT_ContractRestClientApplicationTest], using SpringBootContextLoader
+2019-06-13 20:55:07.631  INFO 28818 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.glb.bootcamp.PUT_ContractRestClientApplicationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-06-13 20:55:07.631  INFO 28818 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.glb.bootcamp.PUT_ContractRestClientApplicationTest]: PUT_ContractRestClientApplicationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-06-13 20:55:07.637  INFO 28818 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.glb.bootcamp.ContractRestClientApplication for test class com.glb.bootcamp.PUT_ContractRestClientApplicationTest
+2019-06-13 20:55:07.641  INFO 28818 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.cloud.contract.stubrunner.provider.wiremock.StubRunnerWireMockTestExecutionListener, org.springframework.cloud.contract.wiremock.WireMockTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-06-13 20:55:07.643  INFO 28818 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4c1d1ab9, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@26bdee5, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@73e6fa96, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@56a203cd, org.springframework.test.context.support.DirtiesContextTestExecutionListener@724e0372, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2e8e7728, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6af81a25, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2c82d0dc, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2e5513ad, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@73bf0678, org.springframework.cloud.contract.stubrunner.provider.wiremock.StubRunnerWireMockTestExecutionListener@59bc1318, org.springframework.cloud.contract.wiremock.WireMockTestExecutionListener@63822cc3]
+2019-06-13 20:55:07.658  INFO 28818 --- [    Test worker] o.s.c.c.s.AetherStubDownloaderBuilder    : Will download stubs and contracts via Aether
+2019-06-13 20:55:07.658  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Remote repos not passed but the switch to work offline was set. Stubs will be used from your local Maven repository.
+2019-06-13 20:55:07.665  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Resolved version is [0.0.1-SNAPSHOT]
+2019-06-13 20:55:07.669  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Resolved artifact [com.globant.bootcamp:contract-rest-service:jar:stubs:0.0.1-SNAPSHOT] to /home/rocks/.m2/repository/com/globant/bootcamp/contract-rest-service/0.0.1-SNAPSHOT/contract-rest-service-0.0.1-SNAPSHOT-stubs.jar
+2019-06-13 20:55:07.672  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Unpacking stub from JAR [URI: file:/home/rocks/.m2/repository/com/globant/bootcamp/contract-rest-service/0.0.1-SNAPSHOT/contract-rest-service-0.0.1-SNAPSHOT-stubs.jar]
+2019-06-13 20:55:07.679  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Unpacked file to [/tmp/contracts13685179783030496207]
+2019-06-13 20:55:08.100  INFO 28818 --- [    Test worker] w.org.eclipse.jetty.server.Server        : jetty-9.2.z-SNAPSHOT
+2019-06-13 20:55:08.104  INFO 28818 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Started w.o.e.j.s.ServletContextHandler@6691dbb8{/__admin,null,AVAILABLE}
+2019-06-13 20:55:08.104  INFO 28818 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Started w.o.e.j.s.ServletContextHandler@1e98e1c9{/,null,AVAILABLE}
+2019-06-13 20:55:08.105  INFO 28818 --- [    Test worker] w.o.e.j.s.NetworkTrafficServerConnector  : Started NetworkTrafficServerConnector@763ca5b9{HTTP/1.1}{0.0.0.0:8100}
+2019-06-13 20:55:08.105  INFO 28818 --- [    Test worker] w.org.eclipse.jetty.server.Server        : Started @12980ms
+2019-06-13 20:55:08.106  INFO 28818 --- [    Test worker] o.s.c.contract.stubrunner.StubServer     : Started stub server for project [com.globant.bootcamp:contract-rest-service:0.0.1-SNAPSHOT:stubs] on port 8100
+2019-06-13 20:55:08.117  INFO 28818 --- [  qtp7690933-53] /__admin                                 : RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.AdminRequestHandler. Normalized mapped under returned 'null'
+2019-06-13 20:55:08.119  INFO 28818 --- [  qtp7690933-53] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [225]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  &quot;id&quot; : &quot;853c8fdc-1bc0-4658-b7cf-afa035877153&quot;,
+  &quot;request&quot; : {
+    &quot;url&quot; : &quot;/ping&quot;,
+    &quot;method&quot; : &quot;GET&quot;
+  },
+  &quot;response&quot; : {
+    &quot;status&quot; : 200,
+    &quot;body&quot; : &quot;OK&quot;
+  },
+  &quot;uuid&quot; : &quot;853c8fdc-1bc0-4658-b7cf-afa035877153&quot;
+}
+
+2019-06-13 20:55:08.157  INFO 28818 --- [  qtp7690933-54] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [227]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  &quot;id&quot; : &quot;5915224b-7bfb-46ab-b7cb-70276b97aa19&quot;,
+  &quot;request&quot; : {
+    &quot;url&quot; : &quot;/health&quot;,
+    &quot;method&quot; : &quot;GET&quot;
+  },
+  &quot;response&quot; : {
+    &quot;status&quot; : 200,
+    &quot;body&quot; : &quot;OK&quot;
+  },
+  &quot;uuid&quot; : &quot;5915224b-7bfb-46ab-b7cb-70276b97aa19&quot;
+}
+
+2019-06-13 20:55:08.194  INFO 28818 --- [  qtp7690933-56] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [398]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  &quot;id&quot; : &quot;073ca12d-8514-4dcc-b858-a8e7f85d4249&quot;,
+  &quot;request&quot; : {
+    &quot;url&quot; : &quot;/customer/Luis&quot;,
+    &quot;method&quot; : &quot;POST&quot;
+  },
+  &quot;response&quot; : {
+    &quot;status&quot; : 200,
+    &quot;body&quot; : &quot;{\&quot;surname\&quot;:\&quot;Jackson\&quot;,\&quot;name\&quot;:\&quot;Luis\&quot;,\&quot;id\&quot;:5}&quot;,
+    &quot;headers&quot; : {
+      &quot;Content-Type&quot; : &quot;application/json&quot;
+    },
+    &quot;transformers&quot; : [ &quot;response-template&quot; ]
+  },
+  &quot;uuid&quot; : &quot;073ca12d-8514-4dcc-b858-a8e7f85d4249&quot;
+}
+
+2019-06-13 20:55:08.246  INFO 28818 --- [  qtp7690933-55] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [395]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  &quot;id&quot; : &quot;6dc7bcff-9068-42c4-ab03-c685ee094764&quot;,
+  &quot;request&quot; : {
+    &quot;url&quot; : &quot;/customer/4&quot;,
+    &quot;method&quot; : &quot;POST&quot;
+  },
+  &quot;response&quot; : {
+    &quot;status&quot; : 200,
+    &quot;body&quot; : &quot;{\&quot;surname\&quot;:\&quot;Diaz\&quot;,\&quot;name\&quot;:\&quot;William\&quot;,\&quot;id\&quot;:4}&quot;,
+    &quot;headers&quot; : {
+      &quot;Content-Type&quot; : &quot;application/json&quot;
+    },
+    &quot;transformers&quot; : [ &quot;response-template&quot; ]
+  },
+  &quot;uuid&quot; : &quot;6dc7bcff-9068-42c4-ab03-c685ee094764&quot;
+}
+
+2019-06-13 20:55:08.297  INFO 28818 --- [  qtp7690933-53] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [393]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  &quot;id&quot; : &quot;0d821822-a291-4041-a39f-963a08cd1d47&quot;,
+  &quot;request&quot; : {
+    &quot;url&quot; : &quot;/customer/7&quot;,
+    &quot;method&quot; : &quot;GET&quot;
+  },
+  &quot;response&quot; : {
+    &quot;status&quot; : 200,
+    &quot;body&quot; : &quot;{\&quot;surname\&quot;:\&quot;Castro\&quot;,\&quot;name\&quot;:\&quot;Mike\&quot;,\&quot;id\&quot;:7}&quot;,
+    &quot;headers&quot; : {
+      &quot;Content-Type&quot; : &quot;application/json&quot;
+    },
+    &quot;transformers&quot; : [ &quot;response-template&quot; ]
+  },
+  &quot;uuid&quot; : &quot;0d821822-a291-4041-a39f-963a08cd1d47&quot;
+}
+
+2019-06-13 20:55:08.310  INFO 28818 --- [  qtp7690933-54] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [393]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  &quot;id&quot; : &quot;60a3c886-831e-4e87-a374-e19f8b7edbdf&quot;,
+  &quot;request&quot; : {
+    &quot;url&quot; : &quot;/customer/5&quot;,
+    &quot;method&quot; : &quot;PUT&quot;
+  },
+  &quot;response&quot; : {
+    &quot;status&quot; : 200,
+    &quot;body&quot; : &quot;{\&quot;surname\&quot;:\&quot;Jaimes\&quot;,\&quot;name\&quot;:\&quot;Luis\&quot;,\&quot;id\&quot;:5}&quot;,
+    &quot;headers&quot; : {
+      &quot;Content-Type&quot; : &quot;application/json&quot;
+    },
+    &quot;transformers&quot; : [ &quot;response-template&quot; ]
+  },
+  &quot;uuid&quot; : &quot;60a3c886-831e-4e87-a374-e19f8b7edbdf&quot;
+}
+
+2019-06-13 20:55:08.335  INFO 28818 --- [  qtp7690933-56] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [395]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  &quot;id&quot; : &quot;930a162d-aa0b-483a-9470-295d112e4aa6&quot;,
+  &quot;request&quot; : {
+    &quot;url&quot; : &quot;/customer/3&quot;,
+    &quot;method&quot; : &quot;GET&quot;
+  },
+  &quot;response&quot; : {
+    &quot;status&quot; : 200,
+    &quot;body&quot; : &quot;{\&quot;surname\&quot;:\&quot;Pelaez\&quot;,\&quot;name\&quot;:\&quot;Daniel\&quot;,\&quot;id\&quot;:3}&quot;,
+    &quot;headers&quot; : {
+      &quot;Content-Type&quot; : &quot;application/json&quot;
+    },
+    &quot;transformers&quot; : [ &quot;response-template&quot; ]
+  },
+  &quot;uuid&quot; : &quot;930a162d-aa0b-483a-9470-295d112e4aa6&quot;
+}
+
+2019-06-13 20:55:08.348  INFO 28818 --- [  qtp7690933-55] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [393]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  &quot;id&quot; : &quot;46788f41-22d9-4a43-84af-32b8db6313b9&quot;,
+  &quot;request&quot; : {
+    &quot;url&quot; : &quot;/customer/1&quot;,
+    &quot;method&quot; : &quot;GET&quot;
+  },
+  &quot;response&quot; : {
+    &quot;status&quot; : 200,
+    &quot;body&quot; : &quot;{\&quot;surname\&quot;:\&quot;Castro\&quot;,\&quot;name\&quot;:\&quot;Mike\&quot;,\&quot;id\&quot;:1}&quot;,
+    &quot;headers&quot; : {
+      &quot;Content-Type&quot; : &quot;application/json&quot;
+    },
+    &quot;transformers&quot; : [ &quot;response-template&quot; ]
+  },
+  &quot;uuid&quot; : &quot;46788f41-22d9-4a43-84af-32b8db6313b9&quot;
+}
+
+2019-06-13 20:55:08.371  INFO 28818 --- [  qtp7690933-53] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [393]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  &quot;id&quot; : &quot;089eb25c-e8bd-4a50-ae91-369e19c97612&quot;,
+  &quot;request&quot; : {
+    &quot;url&quot; : &quot;/customer/2&quot;,
+    &quot;method&quot; : &quot;GET&quot;
+  },
+  &quot;response&quot; : {
+    &quot;status&quot; : 200,
+    &quot;body&quot; : &quot;{\&quot;surname\&quot;:\&quot;Perez\&quot;,\&quot;name\&quot;:\&quot;Mauro\&quot;,\&quot;id\&quot;:2}&quot;,
+    &quot;headers&quot; : {
+      &quot;Content-Type&quot; : &quot;application/json&quot;
+    },
+    &quot;transformers&quot; : [ &quot;response-template&quot; ]
+  },
+  &quot;uuid&quot; : &quot;089eb25c-e8bd-4a50-ae91-369e19c97612&quot;
+}
+
+2019-06-13 20:55:08.392  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.StubRunnerExecutor    : All stubs are now running RunningStubs [namesAndPorts={com.globant.bootcamp:contract-rest-service:0.0.1-SNAPSHOT:stubs=8100}]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 4.10.3</a> at Jun 13, 2019, 8:55:10 PM</p>
+</div>
+</div>
+</body>
+</html>

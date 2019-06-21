@@ -1,0 +1,16 @@
+{
+  "id" : "073ca12d-8514-4dcc-b858-a8e7f85d4249",
+  "request" : {
+    "url" : "/customer/Luis",
+    "method" : "POST"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Jackson\",\"name\":\"Luis\",\"id\":5}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "073ca12d-8514-4dcc-b858-a8e7f85d4249"
+}

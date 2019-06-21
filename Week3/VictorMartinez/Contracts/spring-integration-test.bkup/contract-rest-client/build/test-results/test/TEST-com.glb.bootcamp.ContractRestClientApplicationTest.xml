@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.glb.bootcamp.ContractRestClientApplicationTest" tests="3" skipped="0" failures="3" errors="0" timestamp="2019-06-14T01:55:08" hostname="rocks" time="1.514">
+  <properties/>
+  <testcase name="get_customer_from_service_contract" classname="com.glb.bootcamp.ContractRestClientApplicationTest" time="0.52">
+    <failure message="com.github.tomakehurst.wiremock.common.FatalStartupException: java.lang.RuntimeException: java.net.BindException: Address already in use" type="com.github.tomakehurst.wiremock.common.FatalStartupException">com.github.tomakehurst.wiremock.common.FatalStartupException: java.lang.RuntimeException: java.net.BindException: Address already in use
+	at com.github.tomakehurst.wiremock.WireMockServer.start(WireMockServer.java:147)
+	at org.springframework.cloud.contract.stubrunner.provider.wiremock.WireMockHttpServerStub.start(WireMockHttpServerStub.java:172)
+	at org.springframework.cloud.contract.stubrunner.StubServer.start(StubServer.java:51)
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.startStubServers(StubRunnerExecutor.java:287)
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.runStubs(StubRunnerExecutor.java:91)
+	at org.springframework.cloud.contract.stubrunner.StubRunner.runStubs(StubRunner.java:81)
+	at org.springframework.cloud.contract.stubrunner.BatchStubRunner.runStubs(BatchStubRunner.java:47)
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.before(StubRunnerRule.java:81)
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.evaluate(StubRunnerRule.java:73)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:117)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.RuntimeException: java.net.BindException: Address already in use
+	at com.github.tomakehurst.wiremock.jetty9.JettyHttpServer.start(JettyHttpServer.java:180)
+	at com.github.tomakehurst.wiremock.WireMockServer.start(WireMockServer.java:145)
+	... 52 more
+Caused by: java.net.BindException: Address already in use
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:461)
+	at java.base/sun.nio.ch.Net.bind(Net.java:453)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80)
+	at wiremock.org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at wiremock.org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at wiremock.org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at wiremock.org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at com.github.tomakehurst.wiremock.jetty9.JettyHttpServer.start(JettyHttpServer.java:178)
+	... 53 more
+</failure>
+  </testcase>
+  <testcase name="get_customer_from_service_contract2" classname="com.glb.bootcamp.ContractRestClientApplicationTest" time="0.491">
+    <failure message="com.github.tomakehurst.wiremock.common.FatalStartupException: java.lang.RuntimeException: java.net.BindException: Address already in use" type="com.github.tomakehurst.wiremock.common.FatalStartupException">com.github.tomakehurst.wiremock.common.FatalStartupException: java.lang.RuntimeException: java.net.BindException: Address already in use
+	at com.github.tomakehurst.wiremock.WireMockServer.start(WireMockServer.java:147)
+	at org.springframework.cloud.contract.stubrunner.provider.wiremock.WireMockHttpServerStub.start(WireMockHttpServerStub.java:172)
+	at org.springframework.cloud.contract.stubrunner.StubServer.start(StubServer.java:51)
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.startStubServers(StubRunnerExecutor.java:287)
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.runStubs(StubRunnerExecutor.java:91)
+	at org.springframework.cloud.contract.stubrunner.StubRunner.runStubs(StubRunner.java:81)
+	at org.springframework.cloud.contract.stubrunner.BatchStubRunner.runStubs(BatchStubRunner.java:47)
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.before(StubRunnerRule.java:81)
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.evaluate(StubRunnerRule.java:73)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:117)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.RuntimeException: java.net.BindException: Address already in use
+	at com.github.tomakehurst.wiremock.jetty9.JettyHttpServer.start(JettyHttpServer.java:180)
+	at com.github.tomakehurst.wiremock.WireMockServer.start(WireMockServer.java:145)
+	... 52 more
+Caused by: java.net.BindException: Address already in use
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:461)
+	at java.base/sun.nio.ch.Net.bind(Net.java:453)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80)
+	at wiremock.org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at wiremock.org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at wiremock.org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at wiremock.org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at com.github.tomakehurst.wiremock.jetty9.JettyHttpServer.start(JettyHttpServer.java:178)
+	... 53 more
+</failure>
+  </testcase>
+  <testcase name="get_customer_from_service_contract3" classname="com.glb.bootcamp.ContractRestClientApplicationTest" time="0.496">
+    <failure message="com.github.tomakehurst.wiremock.common.FatalStartupException: java.lang.RuntimeException: java.net.BindException: Address already in use" type="com.github.tomakehurst.wiremock.common.FatalStartupException">com.github.tomakehurst.wiremock.common.FatalStartupException: java.lang.RuntimeException: java.net.BindException: Address already in use
+	at com.github.tomakehurst.wiremock.WireMockServer.start(WireMockServer.java:147)
+	at org.springframework.cloud.contract.stubrunner.provider.wiremock.WireMockHttpServerStub.start(WireMockHttpServerStub.java:172)
+	at org.springframework.cloud.contract.stubrunner.StubServer.start(StubServer.java:51)
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.startStubServers(StubRunnerExecutor.java:287)
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.runStubs(StubRunnerExecutor.java:91)
+	at org.springframework.cloud.contract.stubrunner.StubRunner.runStubs(StubRunner.java:81)
+	at org.springframework.cloud.contract.stubrunner.BatchStubRunner.runStubs(BatchStubRunner.java:47)
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.before(StubRunnerRule.java:81)
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.evaluate(StubRunnerRule.java:73)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:117)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.RuntimeException: java.net.BindException: Address already in use
+	at com.github.tomakehurst.wiremock.jetty9.JettyHttpServer.start(JettyHttpServer.java:180)
+	at com.github.tomakehurst.wiremock.WireMockServer.start(WireMockServer.java:145)
+	... 52 more
+Caused by: java.net.BindException: Address already in use
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:461)
+	at java.base/sun.nio.ch.Net.bind(Net.java:453)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80)
+	at wiremock.org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at wiremock.org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at wiremock.org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at wiremock.org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at com.github.tomakehurst.wiremock.jetty9.JettyHttpServer.start(JettyHttpServer.java:178)
+	... 53 more
+</failure>
+  </testcase>
+  <system-out><![CDATA[2019-06-13 20:55:08.439  INFO 28818 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.glb.bootcamp.ContractRestClientApplicationTest], using SpringBootContextLoader
+2019-06-13 20:55:08.440  INFO 28818 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.glb.bootcamp.ContractRestClientApplicationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-06-13 20:55:08.441  INFO 28818 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.glb.bootcamp.ContractRestClientApplicationTest]: ContractRestClientApplicationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-06-13 20:55:08.446  INFO 28818 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.glb.bootcamp.ContractRestClientApplication for test class com.glb.bootcamp.ContractRestClientApplicationTest
+2019-06-13 20:55:08.451  INFO 28818 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.cloud.contract.stubrunner.provider.wiremock.StubRunnerWireMockTestExecutionListener, org.springframework.cloud.contract.wiremock.WireMockTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-06-13 20:55:08.452  INFO 28818 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@54741b46, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@47f80680, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5ce760e3, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1b07bcca, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6f5d2ac7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6816edaa, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@f916833, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@29d674e7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2f5b6808, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@707fbbf4, org.springframework.cloud.contract.stubrunner.provider.wiremock.StubRunnerWireMockTestExecutionListener@74ab8538, org.springframework.cloud.contract.wiremock.WireMockTestExecutionListener@6e40a606]
+2019-06-13 20:55:08.463  INFO 28818 --- [    Test worker] o.s.c.c.s.AetherStubDownloaderBuilder    : Will download stubs and contracts via Aether
+2019-06-13 20:55:08.465  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Remote repos not passed but the switch to work offline was set. Stubs will be used from your local Maven repository.
+2019-06-13 20:55:08.468  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Resolved version is [0.0.1-SNAPSHOT]
+2019-06-13 20:55:08.469  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Resolved artifact [com.globant.bootcamp:contract-rest-service:jar:stubs:0.0.1-SNAPSHOT] to /home/rocks/.m2/repository/com/globant/bootcamp/contract-rest-service/0.0.1-SNAPSHOT/contract-rest-service-0.0.1-SNAPSHOT-stubs.jar
+2019-06-13 20:55:08.470  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Unpacking stub from JAR [URI: file:/home/rocks/.m2/repository/com/globant/bootcamp/contract-rest-service/0.0.1-SNAPSHOT/contract-rest-service-0.0.1-SNAPSHOT-stubs.jar]
+2019-06-13 20:55:08.475  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Unpacked file to [/tmp/contracts926996196665475146]
+2019-06-13 20:55:08.933  INFO 28818 --- [    Test worker] w.org.eclipse.jetty.server.Server        : jetty-9.2.z-SNAPSHOT
+2019-06-13 20:55:08.950  INFO 28818 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Started w.o.e.j.s.ServletContextHandler@797e35d2{/__admin,null,AVAILABLE}
+2019-06-13 20:55:08.951  INFO 28818 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Started w.o.e.j.s.ServletContextHandler@733c2146{/,null,AVAILABLE}
+2019-06-13 20:55:08.965  WARN 28818 --- [    Test worker] w.o.e.j.u.component.AbstractLifeCycle    : FAILED NetworkTrafficServerConnector@62055c70{HTTP/1.1}{0.0.0.0:8100}: java.net.BindException: Address already in use
+
+java.net.BindException: Address already in use
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:461) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:453) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80) ~[na:na]
+	at wiremock.org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.Server.doStart(Server.java:366) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) ~[wiremock-standalone-2.20.0.jar:na]
+	at com.github.tomakehurst.wiremock.jetty9.JettyHttpServer.start(JettyHttpServer.java:178) ~[wiremock-standalone-2.20.0.jar:na]
+	at com.github.tomakehurst.wiremock.WireMockServer.start(WireMockServer.java:145) ~[wiremock-standalone-2.20.0.jar:na]
+	at org.springframework.cloud.contract.stubrunner.provider.wiremock.WireMockHttpServerStub.start(WireMockHttpServerStub.java:172) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubServer.start(StubServer.java:51) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.startStubServers(StubRunnerExecutor.java:287) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.runStubs(StubRunnerExecutor.java:91) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunner.runStubs(StubRunner.java:81) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.BatchStubRunner.runStubs(BatchStubRunner.java:47) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.before(StubRunnerRule.java:81) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.evaluate(StubRunnerRule.java:73) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32) ~[na:na]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93) ~[na:na]
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:117) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404) ~[na:na]
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63) ~[na:na]
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2019-06-13 20:55:08.974  WARN 28818 --- [    Test worker] w.o.e.j.u.component.AbstractLifeCycle    : FAILED wiremock.org.eclipse.jetty.server.Server@5975db37: java.net.BindException: Address already in use
+
+java.net.BindException: Address already in use
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:461) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:453) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80) ~[na:na]
+	at wiremock.org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.Server.doStart(Server.java:366) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) ~[wiremock-standalone-2.20.0.jar:na]
+	at com.github.tomakehurst.wiremock.jetty9.JettyHttpServer.start(JettyHttpServer.java:178) ~[wiremock-standalone-2.20.0.jar:na]
+	at com.github.tomakehurst.wiremock.WireMockServer.start(WireMockServer.java:145) ~[wiremock-standalone-2.20.0.jar:na]
+	at org.springframework.cloud.contract.stubrunner.provider.wiremock.WireMockHttpServerStub.start(WireMockHttpServerStub.java:172) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubServer.start(StubServer.java:51) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.startStubServers(StubRunnerExecutor.java:287) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.runStubs(StubRunnerExecutor.java:91) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunner.runStubs(StubRunner.java:81) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.BatchStubRunner.runStubs(BatchStubRunner.java:47) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.before(StubRunnerRule.java:81) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.evaluate(StubRunnerRule.java:73) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32) ~[na:na]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93) ~[na:na]
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:117) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404) ~[na:na]
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63) ~[na:na]
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2019-06-13 20:55:08.985  INFO 28818 --- [    Test worker] o.s.c.c.s.AetherStubDownloaderBuilder    : Will download stubs and contracts via Aether
+2019-06-13 20:55:08.986  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Remote repos not passed but the switch to work offline was set. Stubs will be used from your local Maven repository.
+2019-06-13 20:55:08.988  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Resolved version is [0.0.1-SNAPSHOT]
+2019-06-13 20:55:08.998  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Resolved artifact [com.globant.bootcamp:contract-rest-service:jar:stubs:0.0.1-SNAPSHOT] to /home/rocks/.m2/repository/com/globant/bootcamp/contract-rest-service/0.0.1-SNAPSHOT/contract-rest-service-0.0.1-SNAPSHOT-stubs.jar
+2019-06-13 20:55:08.998  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Unpacking stub from JAR [URI: file:/home/rocks/.m2/repository/com/globant/bootcamp/contract-rest-service/0.0.1-SNAPSHOT/contract-rest-service-0.0.1-SNAPSHOT-stubs.jar]
+2019-06-13 20:55:09.010  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Unpacked file to [/tmp/contracts2269792199498212760]
+2019-06-13 20:55:09.421  INFO 28818 --- [    Test worker] w.org.eclipse.jetty.server.Server        : jetty-9.2.z-SNAPSHOT
+2019-06-13 20:55:09.434  INFO 28818 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Started w.o.e.j.s.ServletContextHandler@36cb9f1d{/__admin,null,AVAILABLE}
+2019-06-13 20:55:09.435  INFO 28818 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Started w.o.e.j.s.ServletContextHandler@570e6a12{/,null,AVAILABLE}
+2019-06-13 20:55:09.444  WARN 28818 --- [    Test worker] w.o.e.j.u.component.AbstractLifeCycle    : FAILED NetworkTrafficServerConnector@3dd72499{HTTP/1.1}{0.0.0.0:8100}: java.net.BindException: Address already in use
+
+java.net.BindException: Address already in use
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:461) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:453) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80) ~[na:na]
+	at wiremock.org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.Server.doStart(Server.java:366) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) ~[wiremock-standalone-2.20.0.jar:na]
+	at com.github.tomakehurst.wiremock.jetty9.JettyHttpServer.start(JettyHttpServer.java:178) ~[wiremock-standalone-2.20.0.jar:na]
+	at com.github.tomakehurst.wiremock.WireMockServer.start(WireMockServer.java:145) ~[wiremock-standalone-2.20.0.jar:na]
+	at org.springframework.cloud.contract.stubrunner.provider.wiremock.WireMockHttpServerStub.start(WireMockHttpServerStub.java:172) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubServer.start(StubServer.java:51) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.startStubServers(StubRunnerExecutor.java:287) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.runStubs(StubRunnerExecutor.java:91) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunner.runStubs(StubRunner.java:81) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.BatchStubRunner.runStubs(BatchStubRunner.java:47) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.before(StubRunnerRule.java:81) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.evaluate(StubRunnerRule.java:73) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32) ~[na:na]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93) ~[na:na]
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:117) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404) ~[na:na]
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63) ~[na:na]
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2019-06-13 20:55:09.471  WARN 28818 --- [    Test worker] w.o.e.j.u.component.AbstractLifeCycle    : FAILED wiremock.org.eclipse.jetty.server.Server@25989cc2: java.net.BindException: Address already in use
+
+java.net.BindException: Address already in use
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:461) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:453) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80) ~[na:na]
+	at wiremock.org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.Server.doStart(Server.java:366) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) ~[wiremock-standalone-2.20.0.jar:na]
+	at com.github.tomakehurst.wiremock.jetty9.JettyHttpServer.start(JettyHttpServer.java:178) ~[wiremock-standalone-2.20.0.jar:na]
+	at com.github.tomakehurst.wiremock.WireMockServer.start(WireMockServer.java:145) ~[wiremock-standalone-2.20.0.jar:na]
+	at org.springframework.cloud.contract.stubrunner.provider.wiremock.WireMockHttpServerStub.start(WireMockHttpServerStub.java:172) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubServer.start(StubServer.java:51) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.startStubServers(StubRunnerExecutor.java:287) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.runStubs(StubRunnerExecutor.java:91) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunner.runStubs(StubRunner.java:81) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.BatchStubRunner.runStubs(BatchStubRunner.java:47) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.before(StubRunnerRule.java:81) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.evaluate(StubRunnerRule.java:73) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32) ~[na:na]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93) ~[na:na]
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:117) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404) ~[na:na]
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63) ~[na:na]
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2019-06-13 20:55:09.481  INFO 28818 --- [    Test worker] o.s.c.c.s.AetherStubDownloaderBuilder    : Will download stubs and contracts via Aether
+2019-06-13 20:55:09.483  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Remote repos not passed but the switch to work offline was set. Stubs will be used from your local Maven repository.
+2019-06-13 20:55:09.504  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Resolved version is [0.0.1-SNAPSHOT]
+2019-06-13 20:55:09.505  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Resolved artifact [com.globant.bootcamp:contract-rest-service:jar:stubs:0.0.1-SNAPSHOT] to /home/rocks/.m2/repository/com/globant/bootcamp/contract-rest-service/0.0.1-SNAPSHOT/contract-rest-service-0.0.1-SNAPSHOT-stubs.jar
+2019-06-13 20:55:09.506  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Unpacking stub from JAR [URI: file:/home/rocks/.m2/repository/com/globant/bootcamp/contract-rest-service/0.0.1-SNAPSHOT/contract-rest-service-0.0.1-SNAPSHOT-stubs.jar]
+2019-06-13 20:55:09.511  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Unpacked file to [/tmp/contracts947057229053772958]
+2019-06-13 20:55:09.956  INFO 28818 --- [    Test worker] w.org.eclipse.jetty.server.Server        : jetty-9.2.z-SNAPSHOT
+2019-06-13 20:55:09.959  INFO 28818 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Started w.o.e.j.s.ServletContextHandler@62181117{/__admin,null,AVAILABLE}
+2019-06-13 20:55:09.960  INFO 28818 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Started w.o.e.j.s.ServletContextHandler@26729e3c{/,null,AVAILABLE}
+2019-06-13 20:55:09.968  WARN 28818 --- [    Test worker] w.o.e.j.u.component.AbstractLifeCycle    : FAILED NetworkTrafficServerConnector@440a34c{HTTP/1.1}{0.0.0.0:8100}: java.net.BindException: Address already in use
+
+java.net.BindException: Address already in use
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:461) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:453) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80) ~[na:na]
+	at wiremock.org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.Server.doStart(Server.java:366) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) ~[wiremock-standalone-2.20.0.jar:na]
+	at com.github.tomakehurst.wiremock.jetty9.JettyHttpServer.start(JettyHttpServer.java:178) ~[wiremock-standalone-2.20.0.jar:na]
+	at com.github.tomakehurst.wiremock.WireMockServer.start(WireMockServer.java:145) ~[wiremock-standalone-2.20.0.jar:na]
+	at org.springframework.cloud.contract.stubrunner.provider.wiremock.WireMockHttpServerStub.start(WireMockHttpServerStub.java:172) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubServer.start(StubServer.java:51) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.startStubServers(StubRunnerExecutor.java:287) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.runStubs(StubRunnerExecutor.java:91) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunner.runStubs(StubRunner.java:81) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.BatchStubRunner.runStubs(BatchStubRunner.java:47) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.before(StubRunnerRule.java:81) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.evaluate(StubRunnerRule.java:73) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32) ~[na:na]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93) ~[na:na]
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:117) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404) ~[na:na]
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63) ~[na:na]
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2019-06-13 20:55:09.974  WARN 28818 --- [    Test worker] w.o.e.j.u.component.AbstractLifeCycle    : FAILED wiremock.org.eclipse.jetty.server.Server@57f5ad4a: java.net.BindException: Address already in use
+
+java.net.BindException: Address already in use
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:461) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:453) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80) ~[na:na]
+	at wiremock.org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.server.Server.doStart(Server.java:366) ~[wiremock-standalone-2.20.0.jar:na]
+	at wiremock.org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) ~[wiremock-standalone-2.20.0.jar:na]
+	at com.github.tomakehurst.wiremock.jetty9.JettyHttpServer.start(JettyHttpServer.java:178) ~[wiremock-standalone-2.20.0.jar:na]
+	at com.github.tomakehurst.wiremock.WireMockServer.start(WireMockServer.java:145) ~[wiremock-standalone-2.20.0.jar:na]
+	at org.springframework.cloud.contract.stubrunner.provider.wiremock.WireMockHttpServerStub.start(WireMockHttpServerStub.java:172) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubServer.start(StubServer.java:51) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.startStubServers(StubRunnerExecutor.java:287) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunnerExecutor.runStubs(StubRunnerExecutor.java:91) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.StubRunner.runStubs(StubRunner.java:81) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.BatchStubRunner.runStubs(BatchStubRunner.java:47) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.before(StubRunnerRule.java:81) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.contract.stubrunner.junit.StubRunnerRule$1.evaluate(StubRunnerRule.java:73) ~[spring-cloud-contract-stub-runner-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) ~[spring-test-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32) ~[na:na]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93) ~[na:na]
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:117) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137) ~[na:na]
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404) ~[na:na]
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63) ~[na:na]
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

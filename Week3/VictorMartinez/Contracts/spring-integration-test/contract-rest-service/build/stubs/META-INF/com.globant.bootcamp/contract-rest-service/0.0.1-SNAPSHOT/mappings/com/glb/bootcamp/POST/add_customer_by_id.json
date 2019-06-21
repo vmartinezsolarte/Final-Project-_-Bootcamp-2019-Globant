@@ -1,0 +1,28 @@
+{
+  "id" : "30b7aa2b-7dc8-4d9c-a17e-ff18e15b37e3",
+  "request" : {
+    "url" : "/customer/id",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['name'] == 'Felipe')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['surname'] == 'Martinez')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['id'] == 4)]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Martinez\",\"name\":\"Felipe\",\"id\":4}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "30b7aa2b-7dc8-4d9c-a17e-ff18e15b37e3"
+}

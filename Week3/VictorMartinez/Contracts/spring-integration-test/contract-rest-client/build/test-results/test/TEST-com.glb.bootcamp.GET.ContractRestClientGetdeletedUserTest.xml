@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.glb.bootcamp.GET.ContractRestClientGetdeletedUserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-06-20T16:52:33" hostname="rocks" time="0.015">
+  <properties/>
+  <testcase name="get_customer_from_service_contract" classname="com.glb.bootcamp.GET.ContractRestClientGetdeletedUserTest" time="0.015"/>
+  <system-out><![CDATA[2019-06-20 11:52:32.294  INFO 14774 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.glb.bootcamp.GET.ContractRestClientGetdeletedUserTest], using SpringBootContextLoader
+2019-06-20 11:52:32.295  INFO 14774 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.glb.bootcamp.GET.ContractRestClientGetdeletedUserTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-06-20 11:52:32.295  INFO 14774 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.glb.bootcamp.GET.ContractRestClientGetdeletedUserTest]: ContractRestClientGetdeletedUserTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-06-20 11:52:32.299  INFO 14774 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.glb.bootcamp.ContractRestClientApplication for test class com.glb.bootcamp.GET.ContractRestClientGetdeletedUserTest
+2019-06-20 11:52:32.300  INFO 14774 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.cloud.contract.stubrunner.provider.wiremock.StubRunnerWireMockTestExecutionListener, org.springframework.cloud.contract.wiremock.WireMockTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-06-20 11:52:32.302  INFO 14774 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@744a32d7, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3a188070, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4baec271, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@76c9a043, org.springframework.test.context.support.DirtiesContextTestExecutionListener@53b0e8c7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2d55f9c1, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@10d51b50, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2ba57ab1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7f8759d2, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7d1e2c12, org.springframework.cloud.contract.stubrunner.provider.wiremock.StubRunnerWireMockTestExecutionListener@4529a77a, org.springframework.cloud.contract.wiremock.WireMockTestExecutionListener@45593d9c]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.4.RELEASE)
+
+2019-06-20 11:52:32.327  INFO 14774 --- [    Test worker] b.G.ContractRestClientGetdeletedUserTest : Starting ContractRestClientGetdeletedUserTest on rocks with PID 14774 (started by rocks in /home/rocks/Documents/Programming/Spring/bootcamp-java-spring-may-2019/Week3/VictorMartinez/Contracts/spring-integration-test/contract-rest-client)
+2019-06-20 11:52:32.328  INFO 14774 --- [    Test worker] b.G.ContractRestClientGetdeletedUserTest : No active profile set, falling back to default profiles: default
+2019-06-20 11:52:32.613  INFO 14774 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2019-06-20 11:52:32.615  INFO 14774 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-20 11:52:32.615  INFO 14774 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-06-20 11:52:32.631  INFO 14774 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-20 11:52:32.631  INFO 14774 --- [    Test worker] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 301 ms
+2019-06-20 11:52:32.892  INFO 14774 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-20 11:52:33.025  INFO 14774 --- [    Test worker] o.s.c.c.s.AetherStubDownloaderBuilder    : Will download stubs and contracts via Aether
+2019-06-20 11:52:33.026  INFO 14774 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Remote repos not passed but the switch to work offline was set. Stubs will be used from your local Maven repository.
+2019-06-20 11:52:33.027  INFO 14774 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Desired version is [+] - will try to resolve the latest version
+2019-06-20 11:52:33.028  INFO 14774 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Resolved version is [0.0.1-SNAPSHOT]
+2019-06-20 11:52:33.029  INFO 14774 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Resolved artifact [com.globant.bootcamp:contract-rest-service:jar:stubs:0.0.1-SNAPSHOT] to /home/rocks/.m2/repository/com/globant/bootcamp/contract-rest-service/0.0.1-SNAPSHOT/contract-rest-service-0.0.1-SNAPSHOT-stubs.jar
+2019-06-20 11:52:33.030  INFO 14774 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Unpacking stub from JAR [URI: file:/home/rocks/.m2/repository/com/globant/bootcamp/contract-rest-service/0.0.1-SNAPSHOT/contract-rest-service-0.0.1-SNAPSHOT-stubs.jar]
+2019-06-20 11:52:33.033  INFO 14774 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Unpacked file to [/tmp/contracts300147709385463332]
+2019-06-20 11:52:33.297  INFO 14774 --- [    Test worker] w.org.eclipse.jetty.server.Server        : jetty-9.2.z-SNAPSHOT
+2019-06-20 11:52:33.299  INFO 14774 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Started w.o.e.j.s.ServletContextHandler@2d76c702{/__admin,null,AVAILABLE}
+2019-06-20 11:52:33.300  INFO 14774 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Started w.o.e.j.s.ServletContextHandler@1de25e3d{/,null,AVAILABLE}
+2019-06-20 11:52:33.300  INFO 14774 --- [    Test worker] w.o.e.j.s.NetworkTrafficServerConnector  : Started NetworkTrafficServerConnector@6b7d454{HTTP/1.1}{0.0.0.0:13880}
+2019-06-20 11:52:33.301  INFO 14774 --- [    Test worker] w.org.eclipse.jetty.server.Server        : Started @15915ms
+2019-06-20 11:52:33.301  INFO 14774 --- [    Test worker] o.s.c.contract.stubrunner.StubServer     : Started stub server for project [com.globant.bootcamp:contract-rest-service:0.0.1-SNAPSHOT:stubs] on port 13880
+2019-06-20 11:52:33.305  INFO 14774 --- [p1165379575-168] /__admin                                 : RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.AdminRequestHandler. Normalized mapped under returned 'null'
+2019-06-20 11:52:33.307  INFO 14774 --- [p1165379575-168] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:13880]
+Content-Length: [225]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "1339bd92-9d3c-4f14-928a-f7fccb238972",
+  "request" : {
+    "url" : "/ping",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "OK"
+  },
+  "uuid" : "1339bd92-9d3c-4f14-928a-f7fccb238972"
+}
+
+2019-06-20 11:52:33.327  INFO 14774 --- [p1165379575-169] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:13880]
+Content-Length: [227]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "73b7e786-fff5-4a0b-ad6c-9d887ab27cbd",
+  "request" : {
+    "url" : "/health",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "OK"
+  },
+  "uuid" : "73b7e786-fff5-4a0b-ad6c-9d887ab27cbd"
+}
+
+2019-06-20 11:52:33.350  INFO 14774 --- [p1165379575-170] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:13880]
+Content-Length: [717]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "30b7aa2b-7dc8-4d9c-a17e-ff18e15b37e3",
+  "request" : {
+    "url" : "/customer/id",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['name'] == 'Felipe')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['surname'] == 'Martinez')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['id'] == 4)]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Martinez\",\"name\":\"Felipe\",\"id\":4}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "30b7aa2b-7dc8-4d9c-a17e-ff18e15b37e3"
+}
+
+2019-06-20 11:52:33.376  INFO 14774 --- [p1165379575-171] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:13880]
+Content-Length: [396]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "886741a8-bc0a-4423-9e94-a13fe5756e78",
+  "request" : {
+    "url" : "/customer/id/1",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Castro\",\"name\":\"Mike\",\"id\":1}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "886741a8-bc0a-4423-9e94-a13fe5756e78"
+}
+
+2019-06-20 11:52:33.396  INFO 14774 --- [p1165379575-168] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:13880]
+Content-Length: [401]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "8b9ad99d-9eca-415b-8ed9-7ba62f0d9283",
+  "request" : {
+    "url" : "/customer/id/3",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Gutierrez\",\"name\":\"Daniel\",\"id\":3}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "8b9ad99d-9eca-415b-8ed9-7ba62f0d9283"
+}
+
+2019-06-20 11:52:33.404  INFO 14774 --- [p1165379575-169] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:13880]
+Content-Length: [388]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "71233e6c-01df-4a7c-a40d-30452dd0e890",
+  "request" : {
+    "url" : "/customer/id/2",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"-\",\"name\":\"-\",\"id\":0}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "71233e6c-01df-4a7c-a40d-30452dd0e890"
+}
+
+2019-06-20 11:52:33.412  INFO 14774 --- [p1165379575-170] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:13880]
+Content-Length: [401]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "48d4e535-3c33-44d5-8082-d568df43982f",
+  "request" : {
+    "url" : "/customer/name/Mike",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Castro\",\"name\":\"Mike\",\"id\":1}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "48d4e535-3c33-44d5-8082-d568df43982f"
+}
+
+2019-06-20 11:52:33.420  INFO 14774 --- [p1165379575-171] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:13880]
+Content-Length: [705]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "77326705-b27a-42b8-89de-64ba60024079",
+  "request" : {
+    "url" : "/customer/id/2",
+    "method" : "DELETE",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['surname'] == 'Perez')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['name'] == 'Mauro')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['id'] == 2)]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"-\",\"name\":\"-\",\"id\":0}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "77326705-b27a-42b8-89de-64ba60024079"
+}
+
+2019-06-20 11:52:33.431  INFO 14774 --- [p1165379575-168] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:13880]
+Content-Length: [720]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "37acf32e-e43e-4428-800a-2b4ad0921b20",
+  "request" : {
+    "url" : "/customer/id/3",
+    "method" : "PUT",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['surname'] == 'Gutierrez')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['name'] == 'Daniel')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['id'] == 3)]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Gutierrez\",\"name\":\"Daniel\",\"id\":3}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "37acf32e-e43e-4428-800a-2b4ad0921b20"
+}
+
+2019-06-20 11:52:33.444  INFO 14774 --- [    Test worker] o.s.c.c.stubrunner.StubRunnerExecutor    : All stubs are now running RunningStubs [namesAndPorts={com.globant.bootcamp:contract-rest-service:0.0.1-SNAPSHOT:stubs=13880}]
+2019-06-20 11:52:33.485  INFO 14774 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 39355 (http) with context path ''
+2019-06-20 11:52:33.486  INFO 14774 --- [    Test worker] b.G.ContractRestClientGetdeletedUserTest : Started ContractRestClientGetdeletedUserTest in 1.182 seconds (JVM running for 16.101)
+2019-06-20 11:52:33.497  INFO 14774 --- [p1165379575-169] /                                        : RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
+2019-06-20 11:52:33.498  INFO 14774 --- [p1165379575-169] WireMock                                 : Warning: JSON path expression '$[?(@.['surname'] == 'Gutierrez')]' failed to match document '' because of error 'json string can not be null or empty'
+2019-06-20 11:52:33.498  INFO 14774 --- [p1165379575-169] WireMock                                 : Warning: JSON path expression '$[?(@.['name'] == 'Daniel')]' failed to match document '' because of error 'json string can not be null or empty'
+2019-06-20 11:52:33.498  INFO 14774 --- [p1165379575-169] WireMock                                 : Warning: JSON path expression '$[?(@.['id'] == 3)]' failed to match document '' because of error 'json string can not be null or empty'
+2019-06-20 11:52:33.499  INFO 14774 --- [p1165379575-169] WireMock                                 : Warning: JSON path expression '$[?(@.['surname'] == 'Perez')]' failed to match document '' because of error 'json string can not be null or empty'
+2019-06-20 11:52:33.499  INFO 14774 --- [p1165379575-169] WireMock                                 : Warning: JSON path expression '$[?(@.['name'] == 'Mauro')]' failed to match document '' because of error 'json string can not be null or empty'
+2019-06-20 11:52:33.499  INFO 14774 --- [p1165379575-169] WireMock                                 : Warning: JSON path expression '$[?(@.['id'] == 2)]' failed to match document '' because of error 'json string can not be null or empty'
+2019-06-20 11:52:33.502  INFO 14774 --- [p1165379575-169] WireMock                                 : Request received:
+127.0.0.1 - GET /customer/id/2
+
+User-Agent: [Java/11.0.3]
+Connection: [keep-alive]
+Host: [localhost:13880]
+Accept: [application/json, application/*+json]
+
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "body" : "{\"surname\":\"-\",\"name\":\"-\",\"id\":0}",
+  "headers" : {
+    "Content-Type" : "application/json"
+  },
+  "transformers" : [ "response-template" ]
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+Matched-Stub-Id: [71233e6c-01df-4a7c-a40d-30452dd0e890]
+
+
+2019-06-20 11:52:33.506  WARN 14774 --- [    Test worker] .StubRunnerWireMockTestExecutionListener : You've used fixed ports for WireMock setup - will mark context as dirty. Please use random ports, as much as possible. Your tests will be faster and more reliable and thiswarning will go away
+2019-06-20 11:52:33.527  INFO 14774 --- [    Test worker] w.o.e.j.s.NetworkTrafficServerConnector  : Stopped NetworkTrafficServerConnector@6b7d454{HTTP/1.1}{0.0.0.0:13880}
+2019-06-20 11:52:33.528  INFO 14774 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Stopped w.o.e.j.s.ServletContextHandler@1de25e3d{/,null,UNAVAILABLE}
+2019-06-20 11:52:33.528  INFO 14774 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Stopped w.o.e.j.s.ServletContextHandler@2d76c702{/__admin,null,UNAVAILABLE}
+2019-06-20 11:52:33.529  WARN 14774 --- [    Test worker] w.o.e.j.util.thread.QueuedThreadPool     : qtp1165379575{STOPPING,8<=8<=10,i=6,q=6} Couldn't stop Thread[qtp1165379575-188,5,main]
+2019-06-20 11:52:33.529  WARN 14774 --- [    Test worker] w.o.e.j.util.thread.QueuedThreadPool     : qtp1165379575{STOPPING,8<=8<=10,i=5,q=5} Couldn't stop Thread[qtp1165379575-189,5,main]
+2019-06-20 11:52:33.529  WARN 14774 --- [    Test worker] w.o.e.j.util.thread.QueuedThreadPool     : qtp1165379575{STOPPING,8<=8<=10,i=4,q=5} Couldn't stop Thread[qtp1165379575-164,5,main]
+2019-06-20 11:52:33.529  WARN 14774 --- [    Test worker] w.o.e.j.util.thread.QueuedThreadPool     : qtp1165379575{STOPPING,8<=8<=10,i=3,q=5} Couldn't stop Thread[qtp1165379575-165,5,main]
+2019-06-20 11:52:33.530  INFO 14774 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

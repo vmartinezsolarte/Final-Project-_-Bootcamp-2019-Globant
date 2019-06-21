@@ -1,0 +1,16 @@
+{
+  "id" : "886741a8-bc0a-4423-9e94-a13fe5756e78",
+  "request" : {
+    "url" : "/customer/id/1",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Castro\",\"name\":\"Mike\",\"id\":1}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "886741a8-bc0a-4423-9e94-a13fe5756e78"
+}

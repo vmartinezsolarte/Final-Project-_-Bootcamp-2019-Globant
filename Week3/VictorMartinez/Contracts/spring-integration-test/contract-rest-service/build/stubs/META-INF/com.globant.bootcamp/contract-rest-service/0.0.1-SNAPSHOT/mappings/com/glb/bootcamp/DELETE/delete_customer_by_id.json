@@ -1,0 +1,28 @@
+{
+  "id" : "77326705-b27a-42b8-89de-64ba60024079",
+  "request" : {
+    "url" : "/customer/id/2",
+    "method" : "DELETE",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['surname'] == 'Perez')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['name'] == 'Mauro')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['id'] == 2)]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"-\",\"name\":\"-\",\"id\":0}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "77326705-b27a-42b8-89de-64ba60024079"
+}

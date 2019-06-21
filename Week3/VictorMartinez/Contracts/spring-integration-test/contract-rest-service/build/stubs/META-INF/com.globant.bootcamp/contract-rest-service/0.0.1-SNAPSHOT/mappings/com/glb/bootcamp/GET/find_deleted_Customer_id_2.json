@@ -1,0 +1,16 @@
+{
+  "id" : "71233e6c-01df-4a7c-a40d-30452dd0e890",
+  "request" : {
+    "url" : "/customer/id/2",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"-\",\"name\":\"-\",\"id\":0}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "71233e6c-01df-4a7c-a40d-30452dd0e890"
+}

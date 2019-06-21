@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.glb.bootcamp.POST_ContractRestClientApplicationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-06-14T01:55:01" hostname="rocks" time="5.793">
+  <properties/>
+  <testcase name="add_customer_from_service_contract_By_Name" classname="com.glb.bootcamp.POST_ContractRestClientApplicationTest" time="4.944"/>
+  <testcase name="add_customer_from_service_contract_By_Id" classname="com.glb.bootcamp.POST_ContractRestClientApplicationTest" time="0.845"/>
+  <system-out><![CDATA[20:54:56.233 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.glb.bootcamp.POST_ContractRestClientApplicationTest]
+20:54:56.251 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+20:54:56.266 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+20:54:56.317 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.glb.bootcamp.POST_ContractRestClientApplicationTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+20:54:56.357 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.glb.bootcamp.POST_ContractRestClientApplicationTest], using SpringBootContextLoader
+20:54:56.371 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.glb.bootcamp.POST_ContractRestClientApplicationTest]: class path resource [com/glb/bootcamp/POST_ContractRestClientApplicationTest-context.xml] does not exist
+20:54:56.375 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.glb.bootcamp.POST_ContractRestClientApplicationTest]: class path resource [com/glb/bootcamp/POST_ContractRestClientApplicationTestContext.groovy] does not exist
+20:54:56.375 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.glb.bootcamp.POST_ContractRestClientApplicationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+20:54:56.377 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.glb.bootcamp.POST_ContractRestClientApplicationTest]: POST_ContractRestClientApplicationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:54:56.477 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.glb.bootcamp.POST_ContractRestClientApplicationTest]
+20:54:56.596 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/home/rocks/Documents/Programming/Spring/bootcamp-java-spring-may-2019/Week3/VictorMartinez/Contracts/spring-integration-test/contract-rest-client/build/classes/java/main/com/glb/bootcamp/ContractRestClientApplication.class]
+20:54:56.599 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.glb.bootcamp.ContractRestClientApplication for test class com.glb.bootcamp.POST_ContractRestClientApplicationTest
+20:54:56.733 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.glb.bootcamp.POST_ContractRestClientApplicationTest]: using defaults.
+20:54:56.734 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.cloud.contract.stubrunner.provider.wiremock.StubRunnerWireMockTestExecutionListener, org.springframework.cloud.contract.wiremock.WireMockTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+20:54:56.756 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+20:54:56.758 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+20:54:56.760 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@733d56c3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7b7c4055, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@266debbc, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@786a68ed, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6178a26d, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@781f28ff, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@31e60c4b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1ae0279a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3eaf8561, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3ff60a9b, org.springframework.cloud.contract.stubrunner.provider.wiremock.StubRunnerWireMockTestExecutionListener@3e73dd7a, org.springframework.cloud.contract.wiremock.WireMockTestExecutionListener@25b4f1d9]
+20:54:56.765 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.glb.bootcamp.POST_ContractRestClientApplicationTest]
+20:54:56.767 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.glb.bootcamp.POST_ContractRestClientApplicationTest]
+20:54:56.775 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.glb.bootcamp.POST_ContractRestClientApplicationTest]
+20:54:56.776 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.glb.bootcamp.POST_ContractRestClientApplicationTest]
+20:54:56.785 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@701a5bc8 testClass = POST_ContractRestClientApplicationTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@33f99ce7 testClass = POST_ContractRestClientApplicationTest, locations = '{}', classes = '{class com.glb.bootcamp.ContractRestClientApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@58e55b5e, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@220c9e0c, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3d615b64, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@44e2eff5], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+20:54:56.847 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.4.RELEASE)
+
+2019-06-13 20:54:57.502  INFO 28818 --- [    Test worker] b.POST_ContractRestClientApplicationTest : Starting POST_ContractRestClientApplicationTest on rocks with PID 28818 (started by rocks in /home/rocks/Documents/Programming/Spring/bootcamp-java-spring-may-2019/Week3/VictorMartinez/Contracts/spring-integration-test/contract-rest-client)
+2019-06-13 20:54:57.515  INFO 28818 --- [    Test worker] b.POST_ContractRestClientApplicationTest : No active profile set, falling back to default profiles: default
+2019-06-13 20:55:01.280  INFO 28818 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-13 20:55:01.770  INFO 28818 --- [    Test worker] b.POST_ContractRestClientApplicationTest : Started POST_ContractRestClientApplicationTest in 4.908 seconds (JVM running for 6.645)
+2019-06-13 20:55:01.828  INFO 28818 --- [    Test worker] o.s.c.c.s.AetherStubDownloaderBuilder    : Will download stubs and contracts via Aether
+2019-06-13 20:55:01.840  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Remote repos not passed but the switch to work offline was set. Stubs will be used from your local Maven repository.
+2019-06-13 20:55:02.067  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Resolved version is [0.0.1-SNAPSHOT]
+2019-06-13 20:55:02.090  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Resolved artifact [com.globant.bootcamp:contract-rest-service:jar:stubs:0.0.1-SNAPSHOT] to /home/rocks/.m2/repository/com/globant/bootcamp/contract-rest-service/0.0.1-SNAPSHOT/contract-rest-service-0.0.1-SNAPSHOT-stubs.jar
+2019-06-13 20:55:02.093  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Unpacking stub from JAR [URI: file:/home/rocks/.m2/repository/com/globant/bootcamp/contract-rest-service/0.0.1-SNAPSHOT/contract-rest-service-0.0.1-SNAPSHOT-stubs.jar]
+2019-06-13 20:55:02.101  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Unpacked file to [/tmp/contracts16319636702343623080]
+2019-06-13 20:55:03.867  INFO 28818 --- [    Test worker] wiremock.org.eclipse.jetty.util.log      : Logging initialized @8739ms
+2019-06-13 20:55:03.979  INFO 28818 --- [    Test worker] w.org.eclipse.jetty.server.Server        : jetty-9.2.z-SNAPSHOT
+2019-06-13 20:55:04.015  INFO 28818 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Started w.o.e.j.s.ServletContextHandler@51048033{/__admin,null,AVAILABLE}
+2019-06-13 20:55:04.016  INFO 28818 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Started w.o.e.j.s.ServletContextHandler@7fdeea09{/,null,AVAILABLE}
+2019-06-13 20:55:04.036  INFO 28818 --- [    Test worker] w.o.e.j.s.NetworkTrafficServerConnector  : Started NetworkTrafficServerConnector@2d2fe376{HTTP/1.1}{0.0.0.0:8100}
+2019-06-13 20:55:04.036  INFO 28818 --- [    Test worker] w.org.eclipse.jetty.server.Server        : Started @8910ms
+2019-06-13 20:55:04.037  INFO 28818 --- [    Test worker] o.s.c.contract.stubrunner.StubServer     : Started stub server for project [com.globant.bootcamp:contract-rest-service:0.0.1-SNAPSHOT:stubs] on port 8100
+2019-06-13 20:55:04.548  INFO 28818 --- [qtp146932005-28] /__admin                                 : RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.AdminRequestHandler. Normalized mapped under returned 'null'
+2019-06-13 20:55:04.582  INFO 28818 --- [qtp146932005-28] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [225]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "9794279a-769a-45d6-ae96-20938df51e6c",
+  "request" : {
+    "url" : "/ping",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "OK"
+  },
+  "uuid" : "9794279a-769a-45d6-ae96-20938df51e6c"
+}
+
+2019-06-13 20:55:04.754  INFO 28818 --- [qtp146932005-29] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [227]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "c468c99b-6138-46b6-b5e0-d59ffb5baa73",
+  "request" : {
+    "url" : "/health",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "OK"
+  },
+  "uuid" : "c468c99b-6138-46b6-b5e0-d59ffb5baa73"
+}
+
+2019-06-13 20:55:05.010  INFO 28818 --- [qtp146932005-30] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [398]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "073ca12d-8514-4dcc-b858-a8e7f85d4249",
+  "request" : {
+    "url" : "/customer/Luis",
+    "method" : "POST"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Jackson\",\"name\":\"Luis\",\"id\":5}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "073ca12d-8514-4dcc-b858-a8e7f85d4249"
+}
+
+2019-06-13 20:55:05.086  INFO 28818 --- [qtp146932005-31] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [395]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "6dc7bcff-9068-42c4-ab03-c685ee094764",
+  "request" : {
+    "url" : "/customer/4",
+    "method" : "POST"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Diaz\",\"name\":\"William\",\"id\":4}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "6dc7bcff-9068-42c4-ab03-c685ee094764"
+}
+
+2019-06-13 20:55:05.184  INFO 28818 --- [qtp146932005-28] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [393]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "0d821822-a291-4041-a39f-963a08cd1d47",
+  "request" : {
+    "url" : "/customer/7",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Castro\",\"name\":\"Mike\",\"id\":7}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "0d821822-a291-4041-a39f-963a08cd1d47"
+}
+
+2019-06-13 20:55:05.203  INFO 28818 --- [qtp146932005-29] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [393]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "60a3c886-831e-4e87-a374-e19f8b7edbdf",
+  "request" : {
+    "url" : "/customer/5",
+    "method" : "PUT"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Jaimes\",\"name\":\"Luis\",\"id\":5}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "60a3c886-831e-4e87-a374-e19f8b7edbdf"
+}
+
+2019-06-13 20:55:05.216  INFO 28818 --- [qtp146932005-30] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [395]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "930a162d-aa0b-483a-9470-295d112e4aa6",
+  "request" : {
+    "url" : "/customer/3",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Pelaez\",\"name\":\"Daniel\",\"id\":3}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "930a162d-aa0b-483a-9470-295d112e4aa6"
+}
+
+2019-06-13 20:55:05.229  INFO 28818 --- [qtp146932005-31] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [393]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "46788f41-22d9-4a43-84af-32b8db6313b9",
+  "request" : {
+    "url" : "/customer/1",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Castro\",\"name\":\"Mike\",\"id\":1}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "46788f41-22d9-4a43-84af-32b8db6313b9"
+}
+
+2019-06-13 20:55:05.252  INFO 28818 --- [qtp146932005-28] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [393]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "089eb25c-e8bd-4a50-ae91-369e19c97612",
+  "request" : {
+    "url" : "/customer/2",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Perez\",\"name\":\"Mauro\",\"id\":2}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "089eb25c-e8bd-4a50-ae91-369e19c97612"
+}
+
+2019-06-13 20:55:05.477  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.StubRunnerExecutor    : All stubs are now running RunningStubs [namesAndPorts={com.globant.bootcamp:contract-rest-service:0.0.1-SNAPSHOT:stubs=8100}]
+2019-06-13 20:55:06.512  INFO 28818 --- [qtp146932005-30] /                                        : RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
+2019-06-13 20:55:06.644  INFO 28818 --- [qtp146932005-30] WireMock                                 : Request received:
+127.0.0.1 - POST /customer/Luis
+
+Accept-Charset: [big5, big5-hkscs, cesu-8, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai, ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146, ibm01147, ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278, ibm280, ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775, ibm850, ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865, ibm866, ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp, iso-2022-jp-2, iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-16, iso-8859-2, iso-8859-3, iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9, jis_x0201, jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16, utf-16be, utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251, windows-1252, windows-1253, windows-1254, windows-1255, windows-1256, windows-1257, windows-1258, windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-euc-jp-linux, x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097, x-ibm1098, x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1166, x-ibm1364, x-ibm1381, x-ibm1383, x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834, x-ibm856, x-ibm874, x-ibm875, x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935, x-ibm937, x-ibm939, x-ibm942, x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949, x-ibm949c, x-ibm950, x-ibm964, x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb, x-iso-8859-11, x-jis0208, x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope, x-maccroatian, x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland, x-macroman, x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine, x-ms932_0213, x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213, x-utf-16le-bom, x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221, x-windows-874, x-windows-949, x-windows-950, x-windows-iso2022jp]
+Accept: [application/json, application/*+json]
+User-Agent: [Java/11.0.3]
+Connection: [keep-alive]
+Host: [localhost:8100]
+Content-Length: [42]
+Content-Type: [application/json]
+{"surname":"Jackson","name":"Luis","id":5}
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "body" : "{\"surname\":\"Jackson\",\"name\":\"Luis\",\"id\":5}",
+  "headers" : {
+    "Content-Type" : "application/json"
+  },
+  "transformers" : [ "response-template" ]
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+Matched-Stub-Id: [073ca12d-8514-4dcc-b858-a8e7f85d4249]
+
+
+2019-06-13 20:55:06.756  INFO 28818 --- [    Test worker] w.o.e.j.s.NetworkTrafficServerConnector  : Stopped NetworkTrafficServerConnector@2d2fe376{HTTP/1.1}{0.0.0.0:8100}
+2019-06-13 20:55:06.759  INFO 28818 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Stopped w.o.e.j.s.ServletContextHandler@7fdeea09{/,null,UNAVAILABLE}
+2019-06-13 20:55:06.761  INFO 28818 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Stopped w.o.e.j.s.ServletContextHandler@51048033{/__admin,null,UNAVAILABLE}
+2019-06-13 20:55:06.765  WARN 28818 --- [    Test worker] w.o.e.j.util.thread.QueuedThreadPool     : qtp146932005{STOPPING,8<=8<=10,i=6,q=4} Couldn't stop Thread[qtp146932005-25,5,]
+2019-06-13 20:55:06.766  WARN 28818 --- [    Test worker] w.o.e.j.util.thread.QueuedThreadPool     : qtp146932005{STOPPING,8<=8<=10,i=0,q=3} Couldn't stop Thread[qtp146932005-30,5,]
+2019-06-13 20:55:06.774  INFO 28818 --- [    Test worker] o.s.c.c.s.AetherStubDownloaderBuilder    : Will download stubs and contracts via Aether
+2019-06-13 20:55:06.775  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Remote repos not passed but the switch to work offline was set. Stubs will be used from your local Maven repository.
+2019-06-13 20:55:06.780  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Resolved version is [0.0.1-SNAPSHOT]
+2019-06-13 20:55:06.782  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Resolved artifact [com.globant.bootcamp:contract-rest-service:jar:stubs:0.0.1-SNAPSHOT] to /home/rocks/.m2/repository/com/globant/bootcamp/contract-rest-service/0.0.1-SNAPSHOT/contract-rest-service-0.0.1-SNAPSHOT-stubs.jar
+2019-06-13 20:55:06.783  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Unpacking stub from JAR [URI: file:/home/rocks/.m2/repository/com/globant/bootcamp/contract-rest-service/0.0.1-SNAPSHOT/contract-rest-service-0.0.1-SNAPSHOT-stubs.jar]
+2019-06-13 20:55:06.794  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.AetherStubDownloader  : Unpacked file to [/tmp/contracts11009871580246859536]
+2019-06-13 20:55:07.170  INFO 28818 --- [    Test worker] w.org.eclipse.jetty.server.Server        : jetty-9.2.z-SNAPSHOT
+2019-06-13 20:55:07.182  INFO 28818 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Started w.o.e.j.s.ServletContextHandler@70b6233a{/__admin,null,AVAILABLE}
+2019-06-13 20:55:07.183  INFO 28818 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Started w.o.e.j.s.ServletContextHandler@27cf7275{/,null,AVAILABLE}
+2019-06-13 20:55:07.190  INFO 28818 --- [    Test worker] w.o.e.j.s.NetworkTrafficServerConnector  : Started NetworkTrafficServerConnector@66213a45{HTTP/1.1}{0.0.0.0:8100}
+2019-06-13 20:55:07.191  INFO 28818 --- [    Test worker] w.org.eclipse.jetty.server.Server        : Started @12065ms
+2019-06-13 20:55:07.194  INFO 28818 --- [    Test worker] o.s.c.contract.stubrunner.StubServer     : Started stub server for project [com.globant.bootcamp:contract-rest-service:0.0.1-SNAPSHOT:stubs] on port 8100
+2019-06-13 20:55:07.203  INFO 28818 --- [tp1499164612-42] /__admin                                 : RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.AdminRequestHandler. Normalized mapped under returned 'null'
+2019-06-13 20:55:07.206  INFO 28818 --- [tp1499164612-42] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [225]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "ea5fba2f-1076-4b62-9078-3dbf975c3372",
+  "request" : {
+    "url" : "/ping",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "OK"
+  },
+  "uuid" : "ea5fba2f-1076-4b62-9078-3dbf975c3372"
+}
+
+2019-06-13 20:55:07.255  INFO 28818 --- [tp1499164612-40] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [227]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "4dbfc894-ce70-43f6-b23f-5ecf82ddd442",
+  "request" : {
+    "url" : "/health",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "OK"
+  },
+  "uuid" : "4dbfc894-ce70-43f6-b23f-5ecf82ddd442"
+}
+
+2019-06-13 20:55:07.296  INFO 28818 --- [tp1499164612-43] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [398]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "073ca12d-8514-4dcc-b858-a8e7f85d4249",
+  "request" : {
+    "url" : "/customer/Luis",
+    "method" : "POST"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Jackson\",\"name\":\"Luis\",\"id\":5}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "073ca12d-8514-4dcc-b858-a8e7f85d4249"
+}
+
+2019-06-13 20:55:07.360  INFO 28818 --- [tp1499164612-44] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [395]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "6dc7bcff-9068-42c4-ab03-c685ee094764",
+  "request" : {
+    "url" : "/customer/4",
+    "method" : "POST"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Diaz\",\"name\":\"William\",\"id\":4}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "6dc7bcff-9068-42c4-ab03-c685ee094764"
+}
+
+2019-06-13 20:55:07.409  INFO 28818 --- [tp1499164612-42] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [393]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "0d821822-a291-4041-a39f-963a08cd1d47",
+  "request" : {
+    "url" : "/customer/7",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Castro\",\"name\":\"Mike\",\"id\":7}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "0d821822-a291-4041-a39f-963a08cd1d47"
+}
+
+2019-06-13 20:55:07.423  INFO 28818 --- [tp1499164612-40] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [393]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "60a3c886-831e-4e87-a374-e19f8b7edbdf",
+  "request" : {
+    "url" : "/customer/5",
+    "method" : "PUT"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Jaimes\",\"name\":\"Luis\",\"id\":5}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "60a3c886-831e-4e87-a374-e19f8b7edbdf"
+}
+
+2019-06-13 20:55:07.434  INFO 28818 --- [tp1499164612-43] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [395]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "930a162d-aa0b-483a-9470-295d112e4aa6",
+  "request" : {
+    "url" : "/customer/3",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Pelaez\",\"name\":\"Daniel\",\"id\":3}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "930a162d-aa0b-483a-9470-295d112e4aa6"
+}
+
+2019-06-13 20:55:07.446  INFO 28818 --- [tp1499164612-44] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [393]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "46788f41-22d9-4a43-84af-32b8db6313b9",
+  "request" : {
+    "url" : "/customer/1",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Castro\",\"name\":\"Mike\",\"id\":1}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "46788f41-22d9-4a43-84af-32b8db6313b9"
+}
+
+2019-06-13 20:55:07.465  INFO 28818 --- [tp1499164612-42] WireMock                                 : Admin request received:
+127.0.0.1 - POST /mappings
+
+Connection: [keep-alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/11.0.3)]
+Host: [localhost:8100]
+Content-Length: [393]
+Content-Type: [text/plain; charset=UTF-8]
+{
+  "id" : "089eb25c-e8bd-4a50-ae91-369e19c97612",
+  "request" : {
+    "url" : "/customer/2",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Perez\",\"name\":\"Mauro\",\"id\":2}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "089eb25c-e8bd-4a50-ae91-369e19c97612"
+}
+
+2019-06-13 20:55:07.523  INFO 28818 --- [    Test worker] o.s.c.c.stubrunner.StubRunnerExecutor    : All stubs are now running RunningStubs [namesAndPorts={com.globant.bootcamp:contract-rest-service:0.0.1-SNAPSHOT:stubs=8100}]
+2019-06-13 20:55:07.571  INFO 28818 --- [tp1499164612-40] /                                        : RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
+2019-06-13 20:55:07.576  INFO 28818 --- [tp1499164612-40] WireMock                                 : Request received:
+127.0.0.1 - POST /customer/4
+
+Accept-Charset: [big5, big5-hkscs, cesu-8, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai, ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146, ibm01147, ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278, ibm280, ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775, ibm850, ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865, ibm866, ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp, iso-2022-jp-2, iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-16, iso-8859-2, iso-8859-3, iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9, jis_x0201, jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16, utf-16be, utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251, windows-1252, windows-1253, windows-1254, windows-1255, windows-1256, windows-1257, windows-1258, windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-euc-jp-linux, x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097, x-ibm1098, x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1166, x-ibm1364, x-ibm1381, x-ibm1383, x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834, x-ibm856, x-ibm874, x-ibm875, x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935, x-ibm937, x-ibm939, x-ibm942, x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949, x-ibm949c, x-ibm950, x-ibm964, x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb, x-iso-8859-11, x-jis0208, x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope, x-maccroatian, x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland, x-macroman, x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine, x-ms932_0213, x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213, x-utf-16le-bom, x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221, x-windows-874, x-windows-949, x-windows-950, x-windows-iso2022jp]
+Accept: [application/json, application/*+json]
+User-Agent: [Java/11.0.3]
+Connection: [keep-alive]
+Host: [localhost:8100]
+Content-Length: [42]
+Content-Type: [application/json]
+{"surname":"Diaz","name":"William","id":4}
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "body" : "{\"surname\":\"Diaz\",\"name\":\"William\",\"id\":4}",
+  "headers" : {
+    "Content-Type" : "application/json"
+  },
+  "transformers" : [ "response-template" ]
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+Matched-Stub-Id: [6dc7bcff-9068-42c4-ab03-c685ee094764]
+
+
+2019-06-13 20:55:07.611  INFO 28818 --- [    Test worker] w.o.e.j.s.NetworkTrafficServerConnector  : Stopped NetworkTrafficServerConnector@66213a45{HTTP/1.1}{0.0.0.0:8100}
+2019-06-13 20:55:07.612  INFO 28818 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Stopped w.o.e.j.s.ServletContextHandler@27cf7275{/,null,UNAVAILABLE}
+2019-06-13 20:55:07.613  INFO 28818 --- [    Test worker] w.o.e.j.server.handler.ContextHandler    : Stopped w.o.e.j.s.ServletContextHandler@70b6233a{/__admin,null,UNAVAILABLE}
+2019-06-13 20:55:07.616  WARN 28818 --- [    Test worker] w.o.e.j.util.thread.QueuedThreadPool     : qtp1499164612{STOPPING,8<=8<=10,i=3,q=3} Couldn't stop Thread[qtp1499164612-38,5,main]
+2019-06-13 20:55:07.617  WARN 28818 --- [    Test worker] w.o.e.j.util.thread.QueuedThreadPool     : qtp1499164612{STOPPING,8<=8<=10,i=3,q=3} Couldn't stop Thread[qtp1499164612-40,5,main]
+2019-06-13 20:55:07.617  WARN 28818 --- [    Test worker] w.o.e.j.util.thread.QueuedThreadPool     : qtp1499164612{STOPPING,8<=8<=10,i=3,q=3} Couldn't stop Thread[qtp1499164612-37,5,main]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

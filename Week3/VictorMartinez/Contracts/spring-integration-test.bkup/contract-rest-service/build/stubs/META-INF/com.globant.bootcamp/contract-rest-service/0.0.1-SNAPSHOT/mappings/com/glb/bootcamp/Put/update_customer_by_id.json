@@ -1,0 +1,16 @@
+{
+  "id" : "60a3c886-831e-4e87-a374-e19f8b7edbdf",
+  "request" : {
+    "url" : "/customer/5",
+    "method" : "PUT"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Jaimes\",\"name\":\"Luis\",\"id\":5}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "60a3c886-831e-4e87-a374-e19f8b7edbdf"
+}

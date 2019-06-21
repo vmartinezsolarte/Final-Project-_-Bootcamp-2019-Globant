@@ -1,0 +1,16 @@
+{
+  "id" : "930a162d-aa0b-483a-9470-295d112e4aa6",
+  "request" : {
+    "url" : "/customer/3",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Pelaez\",\"name\":\"Daniel\",\"id\":3}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "930a162d-aa0b-483a-9470-295d112e4aa6"
+}

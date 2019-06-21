@@ -1,0 +1,28 @@
+{
+  "id" : "37acf32e-e43e-4428-800a-2b4ad0921b20",
+  "request" : {
+    "url" : "/customer/id/3",
+    "method" : "PUT",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['surname'] == 'Gutierrez')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['name'] == 'Daniel')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['id'] == 3)]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"surname\":\"Gutierrez\",\"name\":\"Daniel\",\"id\":3}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "37acf32e-e43e-4428-800a-2b4ad0921b20"
+}
