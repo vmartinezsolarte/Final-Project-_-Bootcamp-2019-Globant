@@ -2,18 +2,22 @@ package com.globant.bootcamp.LoginService.repository;
 
 
 
+
 import com.globant.bootcamp.LoginService.data.DataSource;
 import com.globant.bootcamp.LoginService.domain.Account;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 
-@Repository
+@Component
 public class CustomLoginServiceRepository implements LoginServiceRepository {
 
     @Autowired
     private DataSource dataSource;
+
+    public CustomLoginServiceRepository(){}
 
     @Override
     public Account getAccountByName(String username) { return dataSource.retrieveUserInformationByName(username); }

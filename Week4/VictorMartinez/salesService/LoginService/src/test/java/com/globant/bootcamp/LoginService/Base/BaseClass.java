@@ -1,13 +1,16 @@
-package com.globant.bootcamp.LoginService;
+package com.globant.bootcamp.LoginService.Base;
 
+import com.globant.bootcamp.LoginService.LoginServiceApplication;
 import com.globant.bootcamp.LoginService.business.Authenticator;
 import com.globant.bootcamp.LoginService.configuration.ServicesImpl;
 import com.globant.bootcamp.LoginService.controller.LoginServiceController;
-import com.globant.bootcamp.LoginService.repository.CustomLoginServiceRepository;
-import com.globant.bootcamp.LoginService.data.DataSource;
 import com.globant.bootcamp.LoginService.data.AccountDAO_LoginService;
 import com.globant.bootcamp.LoginService.data.AccountMultiplDAO_LoginService;
+import com.globant.bootcamp.LoginService.data.CustomerDAO_LoginService;
+import com.globant.bootcamp.LoginService.data.DataSource;
 import com.globant.bootcamp.LoginService.domain.Account;
+import com.globant.bootcamp.LoginService.domain.Customer;
+import com.globant.bootcamp.LoginService.repository.CustomLoginServiceRepository;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.Before;
 import org.junit.runner.RunWith;
@@ -50,6 +53,8 @@ public abstract class BaseClass {
         usersInfo.put("Andrea", new Account("Andrea","I<3NY", "Andrealoca@gmail.com"));
         usersInfo.put("Natalia", new Account("Natalia","SailorMoon", "Sailor76@exu.com"));
         usersInfo.put("Luis", new Account("Luis", "Functional", "luchito4ever@yahoo.es"));
+
+        Carlos	Valderrama	44	M	408-298-2987	Calle Primera # 34	14/06/2008	car123	1234	Vehicle	Entertaiment	Wheels //
   */
     @Before
     public void setup() {
@@ -71,13 +76,21 @@ public abstract class BaseClass {
                         .header("LogingService", "User Found ")
                         .contentType(MediaType.APPLICATION_JSON)
                         .body(
-                                new AccountDAO_LoginService(
+                                new CustomerDAO_LoginService(
                                         "User Found",
                                         "User found Succesfully",
-                                        new Account(
-                                                "Andres",
-                                                "1234",
-                                                "an@un.edu.co"
+                                        new Customer(
+                                                200,
+                                                "Carlos",
+                                                "Valderrama",
+                                                "44",
+                                                "M",
+                                                "408-298-2987",
+                                                "carlitos@un.edu.co",
+                                                "Calle Primera # 34",
+                                                "14/06/2008",
+                                                "car123",
+                                                "1234",null
                                         )
                                 )
                         )
@@ -89,19 +102,29 @@ public abstract class BaseClass {
                         .header("LogingService", "User Found ")
                         .contentType(MediaType.APPLICATION_JSON)
                         .body(
-                                new AccountDAO_LoginService(
+                                new CustomerDAO_LoginService(
                                         "User Found",
                                         "User found Succesfully",
-                                        new Account(
-                                                "Andres",
-                                                "1234",
-                                                "an@un.edu.co"
+                                        new Customer(
+                                                200,
+                                                "Carlos",
+                                                "Valderrama",
+                                                "44",
+                                                "M",
+                                                "408-298-2987",
+                                                "carlitos@un.edu.co",
+                                                "Calle Primera # 34",
+                                                "14/06/2008",
+                                                "car123",
+                                                "1234",null
                                         )
                                 )
                         )
+
                 );
 
-        Mockito.when(this.loginServiceController.getUserByEmailLiteral("Sailor76@exu.com", "SailorMoon"))
+
+         Mockito.when(this.loginServiceController.getUserByEmailLiteral("Sailor76@exu.com", "SailorMoon"))
                 .thenReturn(
                         ResponseEntity.accepted()
                                 .header("LogingService", "User Found ")

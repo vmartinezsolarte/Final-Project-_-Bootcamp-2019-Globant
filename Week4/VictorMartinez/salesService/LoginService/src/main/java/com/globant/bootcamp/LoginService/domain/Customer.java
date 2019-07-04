@@ -1,83 +1,95 @@
 package com.globant.bootcamp.LoginService.domain;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "customer")
+@Document(collection="customer")
 public class Customer implements Serializable {
 
-        private static final long serialVersionUID = -3009157732242241606L;
         @Id
-        @Column(name="id")
         private long id;
 
-        @Column(name = "firstname")
-        private String firstName;
+        private String firstname;
 
-        @Column(name = "lastname")
-        private String lastName;
+        private String lastname;
 
-        @Column(name = "age")
-        private int age;
+        private String age;
 
-        @Column(name = "sex")
         private String sex;
 
-        @Column(name = "telephone")
         private String telephone;
 
-        @Column(name = "address")
+        private String email;
+
         private String address;
 
-        @Column(name = "dateInitial")
         private String dateInitial;
 
-        @Column(name = "username")
         private String username;
 
-        @Column(name = "password")
         private String password;
 
-        @Column(name = "firstCategory")
-        private String firstCategory;
+        @ElementCollection(targetClass = Products.class)
+        @CollectionTable(
+                name="products",
+                joinColumns =@JoinColumn(name = "id", referencedColumnName = "id")
+        )
+        private List<Products> products;
 
-        @Column(name = "firstProduct")
-        private String firstProduct;
 
-        @Column(name = "secondCategory")
-        private String secondCategory;
-
-        @Column(name = "secondProduct")
-        private String secondProduct;
-
-        protected Customer() {
+        public Customer() {
         }
 
-        public Customer(
-                final String firstName,final String lastName,final int age,final String sex,
-                final String telephone,final String address, final String dateInitial, final String username,
-                final String password, final String firstCategory, final String firstProduct,
-                final String secondCategory, final String secondProduct
-                ) {
-            super();
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.age = age;
-            this.sex = sex;
-            this.telephone=telephone;
-            this.address=address;
-            this.dateInitial = dateInitial;
-            this.username = username;
-            this.password =password;
-            this.firstCategory = firstCategory;
-            this.firstProduct = firstProduct;
-            this.secondCategory= secondCategory;
-            this.secondCategory =secondProduct;
-        }
+    public Customer(
+            long id, String firstname, String lastname, String age, String sex,
+            String telephone, String email, String address, String dateInitial,
+            String username, String password, ArrayList<Products> products
+    ) {
+        super();
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.age = age;
+        this.sex = sex;
+        this.telephone = telephone;
+        this.email = email;
+        this.address = address;
+        this.dateInitial = dateInitial;
+        this.username = username;
+        this.password = password;
+        this.products = products;
+    }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
+    public Customer(
+            long id, String firstname, String lastname, String age,
+            String email, String address, String username, String password
+    ) {
+        super();
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.age = age;
+        this.sex = "M";
+        this.telephone="000-0000-0000";
+        this.email = email;
+        this.address = address;
+        this.dateInitial=null;
+        this.username = username;
+        this.password = password;
+        this.products=null;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public long getId() {
@@ -88,27 +100,35 @@ public class Customer implements Serializable {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public List<Products> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Products> products) {
+        this.products = products;
     }
 
     public String getLastName() {
-        return lastName;
+        return lastname;
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.lastname = lastName;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -152,48 +172,30 @@ public class Customer implements Serializable {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
-    }
+    public String getPassword() { return password; }
+
+    public long get_id() { return id; }
+
+    public void set_id(long _id) { this.id = _id; }
+
+    public String getfirstname() { return firstname; }
+
+    public void setfirstname(String firstname) { this.firstname = firstname;}
+
+    public String getLastname() { return lastname;}
+
+    public void setLastname(String lastname) { this.lastname = lastname; }
+
+    public List<Products> getproducts() { return products; }
+
+    public void setproducts(List<Products> products) { this.products = products; }
 
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getFirstCategory() {
-        return firstCategory;
-    }
-
-    public void setFirstCategory(String firstCategory) {
-        this.firstCategory = firstCategory;
-    }
-
-    public String getFirstProduct() {
-        return firstProduct;
-    }
-
-    public void setFirstProduct(String firstProduct) {
-        this.firstProduct = firstProduct;
-    }
-
-    public String getSecondCategory() {
-        return secondCategory;
-    }
-
-    public void setSecondCategory(String secondCategory) {
-        this.secondCategory = secondCategory;
-    }
-
-    public String getSecondProduct() {
-        return secondProduct;
-    }
-
-    public void setSecondProduct(String secondProduct) {
-        this.secondProduct = secondProduct;
-    }
-
     @Override
         public String toString() {
-            return String.format("Customer[id=%d, firstName='%s', lastName='%s']", id, firstName, lastName);
+            return String.format("Customer[id=%d, firstname='%s', lastName='%s']", id, firstname, lastname);
         }
 }

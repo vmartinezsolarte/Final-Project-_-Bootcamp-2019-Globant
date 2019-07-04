@@ -1,9 +1,11 @@
 package com.globant.bootcamp.LoginService.repository;
 
 import com.globant.bootcamp.LoginService.domain.Account;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 
+@Repository
 public interface LoginServiceRepository {
 
     Account getAccountByName(final String username);

@@ -5,17 +5,21 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-//@Component
-@Service
+
+//@Service
+@Component
 @Qualifier("DataSource")
 public class DataSource {
 
 
     HashMap<String, Account> usersInfo;
+
+
 
     public DataSource(){
         usersInfo = new HashMap<>();
@@ -28,7 +32,10 @@ public class DataSource {
         usersInfo.put("Andrea", new Account("Andrea","I<3NY", "Andrealoca@gmail.com"));
         usersInfo.put("Natalia", new Account("Natalia","SailorMoon", "Sailor76@exu.com"));
         usersInfo.put("Luis", new Account("Luis", "Functional", "luchito4ever@yahoo.es"));
+        usersInfo.put("carlo123", new Account("carlos123", "1234", "carlitos@un.edu.co" ));
     }
+
+
 
 
     public HashMap<String, Account> getAllUsers(){

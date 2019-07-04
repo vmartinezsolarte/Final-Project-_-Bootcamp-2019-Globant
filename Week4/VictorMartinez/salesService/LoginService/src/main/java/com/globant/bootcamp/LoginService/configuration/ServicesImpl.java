@@ -17,14 +17,14 @@ import static com.globant.bootcamp.LoginService.utils.UtilConstants.*;
 public class ServicesImpl implements Services {
 
 
-
+    @Autowired
     private LoginServiceRepository loginServiceRepository;
+
     private CustomerRepository customerRepository;
 
     @Autowired
-    public ServicesImpl(LoginServiceRepository loginServiceRepository, CustomerRepository customerRepository){
+    public ServicesImpl(CustomerRepository customerRepository){
 
-        this.loginServiceRepository = loginServiceRepository;
         this.customerRepository = customerRepository;
     }
 
@@ -165,9 +165,9 @@ public class ServicesImpl implements Services {
     }
 
     @Override
-    public Customer getCustomerInfo(final String username){
-        //return this.customerRepository.
-        return null;
+    public Customer getCustomerInfoByUsername(final String username){
+        return this.customerRepository.findByUsername(username);
+
     }
 
 }

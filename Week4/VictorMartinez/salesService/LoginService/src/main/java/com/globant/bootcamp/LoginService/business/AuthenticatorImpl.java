@@ -1,12 +1,12 @@
 package com.globant.bootcamp.LoginService.business;
 
+import com.globant.bootcamp.LoginService.data.CustomerDAO_LoginService;
 import com.globant.bootcamp.LoginService.domain.Customer;
 import com.globant.bootcamp.LoginService.exceptions.*;
 import com.globant.bootcamp.LoginService.configuration.Services;
 import com.globant.bootcamp.LoginService.data.AccountDAO_LoginService;
 import com.globant.bootcamp.LoginService.data.AccountMultiplDAO_LoginService;
 import com.globant.bootcamp.LoginService.domain.Account;
-import com.globant.bootcamp.LoginService.repository.CustomCustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -49,7 +49,7 @@ public class AuthenticatorImpl implements  Authenticator {
     }
 
     @Override
-    public ResponseEntity<AccountDAO_LoginService> validateRequestByName(
+    public ResponseEntity<CustomerDAO_LoginService> validateRequestByName(
             final String username,
             final String password){
 
@@ -67,9 +67,12 @@ public class AuthenticatorImpl implements  Authenticator {
     }
 
     @Override
-    public ResponseEntity<AccountDAO_LoginService> processRequestByName(
+    public ResponseEntity<CustomerDAO_LoginService> processRequestByName(
             final String username,
             final String password){
+        System.out.println("UserName" + username);
+        System.out.println("Password" + password);
+
 
         if(!this.serviceImpl.correctSyntaxUsername(username)) throw new InvalidUsernameException();
         if(!this.serviceImpl.correctSyntaxPassword(password)) throw new InvalidPasswordException();
@@ -213,20 +216,18 @@ public class AuthenticatorImpl implements  Authenticator {
     }
 
     @Override
-    public ResponseEntity<AccountDAO_LoginService> retrieveAccountByName(final String username){
+    public ResponseEntity<CustomerDAO_LoginService> retrieveAccountByName(final String username){
 
         Account accountSearched = this.serviceImpl.getVerifiedUserAccountByName(username);
         if(accountSearched== null) throw new UserNotFoundException();
-
-        //GetCustomerInfoFromSecondDataBase
-        Customer customerSearched = this.serviceImpl.getCustomerInfo(username);
-
-
-
+        System.out.println("Passed first DB - Data Source");
+        Customer customerSearched = this.serviceImpl.getCustomerInfoByUsername(username);
+        System.out.println("User found =? "+ customerSearched.getFirstname());
+        System.out.println("Testing second DB - Customer");
         return ResponseEntity.accepted()
                 .header("LogingService", "UserFound")
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(new AccountDAO_LoginService("UserFound", "Account", accountSearched ));
+                .body(new CustomerDAO_LoginService("UserFound", "Customer", customerSearched));
     }
 
     @Override

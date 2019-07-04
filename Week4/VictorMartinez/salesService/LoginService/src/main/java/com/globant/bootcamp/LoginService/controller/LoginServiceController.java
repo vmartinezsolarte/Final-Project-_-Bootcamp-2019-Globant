@@ -1,10 +1,14 @@
 package com.globant.bootcamp.LoginService.controller;
 
 import com.globant.bootcamp.LoginService.business.Authenticator;
+import com.globant.bootcamp.LoginService.business.AuthenticatorImpl;
 import com.globant.bootcamp.LoginService.data.AccountDAO_LoginService;
 import com.globant.bootcamp.LoginService.data.AccountMultiplDAO_LoginService;
+import com.globant.bootcamp.LoginService.data.CustomerDAO_LoginService;
 import com.globant.bootcamp.LoginService.data.TwoStringsDAO_LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,21 +30,21 @@ public class LoginServiceController {
     @Autowired
     Authenticator authenticator;
 
-
-    //checked  -- Passed --Test
     @GetMapping(value="/authenticate/{username}/{password}",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<AccountDAO_LoginService> getUserByNameSimple(@PathVariable String username, @PathVariable String password) {
-        return this.authenticator.processRequestByName(username, password);
+    public ResponseEntity<CustomerDAO_LoginService> getUserByNameSimple(@PathVariable String username, @PathVariable String password) {
+        System.out.println("Hey");
+        return null;
+        //return this.authenticator.processRequestByName(username, password);
     }
 
     //checked -- died Get Request can't carry body --Test
     @GetMapping(value="/authenticate",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<AccountDAO_LoginService> getUserByNameSimpleDAO(@RequestBody AccountDAO_LoginService inputDAO) {
+    public ResponseEntity<CustomerDAO_LoginService> getUserByNameSimpleDAO(@RequestBody AccountDAO_LoginService inputDAO) {
         return this.authenticator.processRequestByName(inputDAO.getUserAccount().getUsername(), inputDAO.getUserAccount().getPassword());
     }
 
@@ -48,7 +52,7 @@ public class LoginServiceController {
     @GetMapping(value="/authenticate/username/{username}/{password}",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<AccountDAO_LoginService> getUserByNameNested(@PathVariable String username, @PathVariable String password) {
+    public ResponseEntity<CustomerDAO_LoginService> getUserByNameNested(@PathVariable String username, @PathVariable String password) {
             return this.authenticator.processRequestByName(username, password);
     }
 
@@ -56,7 +60,7 @@ public class LoginServiceController {
     @GetMapping(value="/authenticate/username",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<AccountDAO_LoginService> getUserByNameDAO(@RequestBody AccountDAO_LoginService inputDAO) {
+    public ResponseEntity<CustomerDAO_LoginService> getUserByNameDAO(@RequestBody AccountDAO_LoginService inputDAO) {
         return this.authenticator.processRequestByName(inputDAO.getUserAccount().getUsername(), inputDAO.getUserAccount().getPassword());
     }
 
@@ -64,7 +68,7 @@ public class LoginServiceController {
     @GetMapping(value="/authenticate/user/{username}/{password}",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<AccountDAO_LoginService> getUserInfo(@PathVariable String username, @PathVariable String password) {
+    public ResponseEntity<CustomerDAO_LoginService> getUserInfo(@PathVariable String username, @PathVariable String password) {
         return this.authenticator.processRequestByName(username, password);
     }
 
