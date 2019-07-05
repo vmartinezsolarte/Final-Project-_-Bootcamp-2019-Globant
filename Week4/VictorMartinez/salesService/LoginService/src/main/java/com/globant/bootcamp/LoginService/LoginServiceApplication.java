@@ -1,5 +1,6 @@
 package com.globant.bootcamp.LoginService;
 
+import com.globant.bootcamp.LoginService.controller.LoginServiceController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,12 +22,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 //"com.globant.bootcamp.LoginService.data.DataSource",,
 
-
-@ComponentScan(basePackages = {
-        "com.globant.bootcamp.LoginService.data.DataSource",
-        "com.globant.bootcamp.LoginService.controller.LoginServiceController"})
+/*
+*/
 @SpringBootApplication
+@ComponentScan(basePackages = {"LoginServiceController"})
+//@ComponentScan({"com.globant.bootcamp.LoginService.data.DataSource", "LoginServiceApplication"})
 //@EnableJpaRepositories("com.globant.bootcamp.LoginService.repository")
+
 public class LoginServiceApplication {
     public static void main(String[] args){
         SpringApplication.run(LoginServiceApplication.class, args);

@@ -33,9 +33,8 @@ public class ServicesImpl implements Services {
     public boolean allowAccessByName(String username, String password) {
 
         try {
-            return (this.loginServiceRepository.getAccountByName(username).equals(null) ||
-                    !this.loginServiceRepository.getAccountByName(username).getPassword().equals(password)) ?
-                    false : true;
+            return !this.loginServiceRepository.getAccountByName(username).equals(null) &&
+                    this.loginServiceRepository.getAccountByName(username).getPassword().equals(password);
         }catch(NullPointerException exception) {
             return false;
         }
@@ -45,9 +44,8 @@ public class ServicesImpl implements Services {
     public boolean allowAccessByEmail(String userEmail, String password) {
 
         try {
-            return (this.loginServiceRepository.getAccountByEmail(userEmail).equals(null) ||
-                    !this.loginServiceRepository.getAccountByEmail(userEmail).getPassword().equals(password)) ?
-                    false : true;
+            return !this.loginServiceRepository.getAccountByEmail(userEmail).equals(null) &&
+                    this.loginServiceRepository.getAccountByEmail(userEmail).getPassword().equals(password);
         }catch (NullPointerException exception){
             return false;
         }
@@ -77,10 +75,7 @@ public class ServicesImpl implements Services {
 
         Pattern  forbiddenCharacters = Pattern.compile("[/*$%+,:;=?¿!¡@#|\\s]");
         Matcher matcher = forbiddenCharacters.matcher(userName);
-        if(matcher.find()) {
-            return false;
-        }
-        return true;
+        return !matcher.find();
     }
 
     @Override
@@ -88,10 +83,7 @@ public class ServicesImpl implements Services {
 
         Pattern  forbiddenCharacters = Pattern.compile("[/*$%+,:;=?¿!¡@#|\\s]");
         Matcher matcher = forbiddenCharacters.matcher(password);
-        if(matcher.find()) {
-            return false;
-        }
-        return true;
+        return !matcher.find();
     }
 
     @Override
@@ -100,10 +92,7 @@ public class ServicesImpl implements Services {
         Pattern  forbiddenCharacters = Pattern.compile("[/*$%+,:;=?¿!¡#|\\s]");
 
         Matcher matcher = forbiddenCharacters.matcher(userEmail);
-        if(matcher.find()) {
-            return false;
-        }
-        return true;
+        return !matcher.find();
     }
 
     @Override

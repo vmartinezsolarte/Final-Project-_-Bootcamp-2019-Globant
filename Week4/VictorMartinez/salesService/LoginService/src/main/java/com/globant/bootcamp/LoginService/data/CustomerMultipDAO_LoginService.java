@@ -17,7 +17,7 @@ public class CustomerMultipDAO_LoginService {
         super();
         this.message = (message == null) ? "No Message" : message;
         this.lastResult = (result == null) ? "No Result " : result;
-        this.Customers = (Customers == null) ? null : Customers;
+        this.Customers = Customers;
     }
 
     public String getMessage() {

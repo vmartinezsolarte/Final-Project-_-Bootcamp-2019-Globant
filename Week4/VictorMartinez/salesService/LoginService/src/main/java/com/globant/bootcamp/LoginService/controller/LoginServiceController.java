@@ -1,14 +1,17 @@
 package com.globant.bootcamp.LoginService.controller;
 
 import com.globant.bootcamp.LoginService.business.Authenticator;
-import com.globant.bootcamp.LoginService.business.AuthenticatorImpl;
 import com.globant.bootcamp.LoginService.data.AccountDAO_LoginService;
 import com.globant.bootcamp.LoginService.data.AccountMultiplDAO_LoginService;
 import com.globant.bootcamp.LoginService.data.CustomerDAO_LoginService;
 import com.globant.bootcamp.LoginService.data.TwoStringsDAO_LoginService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.boot.web.servlet.error.ErrorAttributes;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,23 +27,40 @@ import org.springframework.web.bind.annotation.*;
               usersInfo.put("Luis", new Account("Luis", "Functional", "luchito4ever@yahoo.es"));
 */
 
+@Api(value = "Swagger2LoginServiceController")
 @RestController
 public class LoginServiceController {
+
+
+
 
     @Autowired
     Authenticator authenticator;
 
+
+    @ApiOperation(
+            value = "GET request, passing username-password as arguments, for 'getting' Customer Data stored in MongoDB", 
+            response = ResponseEntity.class,
+            tags = "GETUserByUsernamePasswordSimple")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success|OK"),
+            @ApiResponse(code = 401, message = "Not authorized!"),
+            @ApiResponse(code = 403, message = "Forbidden!!!"),
+            @ApiResponse(code = 404, message = "Not found!!!") })
     @GetMapping(value="/authenticate/{username}/{password}",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<CustomerDAO_LoginService> getUserByNameSimple(@PathVariable String username, @PathVariable String password) {
         System.out.println("Hey");
-        return null;
-        //return this.authenticator.processRequestByName(username, password);
+        return this.authenticator.processRequestByName(username, password);
     }
 
-    //checked -- died Get Request can't carry body --Test
+
+    @ApiOperation(
+            value = "GET request, passing username n password stored in body of http request, for 'getting' Customer Data stored in MongoDB",
+            response = ResponseEntity.class,
+            tags = "GETUserByUsernamePasswordDAO")
     @GetMapping(value="/authenticate",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -48,7 +68,11 @@ public class LoginServiceController {
         return this.authenticator.processRequestByName(inputDAO.getUserAccount().getUsername(), inputDAO.getUserAccount().getPassword());
     }
 
-    //checked -- Passed --Test
+    
+    @ApiOperation(
+            value = "GET request,passing username n password nested in username domain, for 'getting' Customer Data stored in MongoDB",
+            response = ResponseEntity.class,
+            tags = "GETUserByUsernamePasswordNestedUsernameSimple")
     @GetMapping(value="/authenticate/username/{username}/{password}",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -56,7 +80,11 @@ public class LoginServiceController {
             return this.authenticator.processRequestByName(username, password);
     }
 
-    //checked -- died Get Request can't carry body --Test
+    
+    @ApiOperation(
+            value = "GET request into username domain, passing username-password stored in body of http request, for 'getting' Customer Data stored in MongoDB",
+            response = ResponseEntity.class,
+            tags = "GETUserByUsernamePasswordNestedUsernameDAO")
     @GetMapping(value="/authenticate/username",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -64,7 +92,10 @@ public class LoginServiceController {
         return this.authenticator.processRequestByName(inputDAO.getUserAccount().getUsername(), inputDAO.getUserAccount().getPassword());
     }
 
-    //checked -- Passed  --Test
+    @ApiOperation(
+            value = "GET request, passing username n password nested domain user, for 'getting' Customer Data stored in MongoDB",
+            response = ResponseEntity.class,
+            tags = "GETUserByUsernamePasswordNestedUserSimple")
     @GetMapping(value="/authenticate/user/{username}/{password}",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -72,7 +103,10 @@ public class LoginServiceController {
         return this.authenticator.processRequestByName(username, password);
     }
 
-    //checked -- died Get Request can't carry body --Test
+    @ApiOperation(
+            value = "GET request, passing email n password in body of http request, for 'getting' Customer Data stored in MongoDB",
+            response = ResponseEntity.class,
+            tags = "GETUserByEmailPasswordSimple")
     @GetMapping(value="/authenticate/email",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -80,7 +114,11 @@ public class LoginServiceController {
         return this.authenticator.processRequestByEmail(inputDAO.getUserAccount().getEmail(), inputDAO.getUserAccount().getPassword());
     }
 
-    //checked -- Passed  --Test
+
+    @ApiOperation(
+            value = "GET request, passing email n password as arguments, for 'getting' Customer Data stored in MongoDB",
+            response = ResponseEntity.class,
+            tags = "GETUserByEmailPasswordDAO")
     @GetMapping(value="/authenticate/email/{userEmail}/{password}",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -88,6 +126,11 @@ public class LoginServiceController {
         return this.authenticator.processRequestByEmail(userEmail, password);
     }
 
+
+    @ApiOperation(
+            value = "GET request, passing Admin Info, for 'getting' all Customers Data stored in MongoDB",
+            response = ResponseEntity.class,
+            tags = "GETUsersWithAdminValidation")
     @GetMapping(value="/authenticate/allUsers",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -98,6 +141,11 @@ public class LoginServiceController {
         return this.authenticator.processRequestGetAllUsers(rol, name, password);
     }
 
+
+    @ApiOperation(
+            value = "POST request, validating Admin Info, for 'posting' a new Customer stored in MongoDB",
+            response = ResponseEntity.class,
+            tags = "POSTAddUsersWithAdminValidation")
     @PostMapping(value="/authenticate",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -109,6 +157,11 @@ public class LoginServiceController {
         return this.authenticator.processRequestAddUserByName(rol, name, password, inputDAO.getUserAccount());
     }
 
+
+    @ApiOperation(
+            value = "PUT request, validating Admin Info, for 'putting' a Customer Info stored in MongoDB",
+            response = ResponseEntity.class,
+            tags = "PUTupdateUsersByNameInfo")
     @PutMapping(value="/authenticate/{username}",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -121,6 +174,11 @@ public class LoginServiceController {
         return this.authenticator.processRequestupdateUserByName(rol, rolname, rolpassword, username, inputDAO.getUserAccount());
     }
 
+
+    @ApiOperation(
+            value = "PUT request, validating Admin Info, for 'putting' a Customer Info in MongoDB",
+            response = ResponseEntity.class,
+            tags = "PUTupdateUserInfo")
     @PutMapping(value="/authenticate",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -132,6 +190,11 @@ public class LoginServiceController {
         return this.authenticator.processRequestupdateUserByName(rol, rolname, rolpassword, inputDAO.getUserAccount().getUsername(), inputDAO.getUserAccount());
     }
 
+
+    @ApiOperation(
+            value = "DELETE request, passing Admin Info, for 'deleting' a Customer by username stored in MongoDB",
+            response = ResponseEntity.class,
+            tags = "DELETECustomerByUsername")
     @DeleteMapping(value="/authenticate/{deleteUsername}",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -143,6 +206,11 @@ public class LoginServiceController {
         return this.authenticator.processRequestDeleteUserByName(rol, rolname, rolpassword, deleteUsername);
     }
 
+
+    @ApiOperation(
+            value = "DELETE request, passing Admin Info, for 'deleting' a Customer username domain stored in MongoDB",
+            response = ResponseEntity.class,
+            tags = "DELETECustomerByUsernameDomain")
     @DeleteMapping(value="/authenticate/username/{deleteUsername}",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -154,6 +222,12 @@ public class LoginServiceController {
         return this.authenticator.processRequestDeleteUserByName(rol, rolname, rolpassword, deleteUsername);
     }
 
+
+
+    @ApiOperation(
+            value = "DELETE request, passing Admin Info, for 'deleting' a Customer stored in MongoDB by email ",
+            response = ResponseEntity.class,
+            tags = "DELETECustomerByEmail")
     @DeleteMapping(value="/authenticate/email/{deleteUserEmail}",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -165,6 +239,11 @@ public class LoginServiceController {
         return this.authenticator.processRequestDeleteUserByEmail(rol, rolname, rolpassword, deleteUserEmail);
     }
 
+
+
+    @ApiOperation(
+            value = "DELETE request, passing Admin Info, for 'deleting' a Customer stored in MongoDB with info in HTTP request",
+            tags = "DELETECustomerByDAO")
     @DeleteMapping(value="/authenticate",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -177,6 +256,12 @@ public class LoginServiceController {
         return this.authenticator.processRequestDeleteUserByName(rol, rolname, rolpassword, inputDAO.getUserAccount().getUsername());
     }
 
+
+
+    @ApiOperation(
+            value = "DELETE request, passing Admin Info, for 'deleting' a Customer stored in MongoDB with info in HTTP request",
+            response = ResponseEntity.class,
+            tags = "DELETECustomerByDAONestedUsername")
     @DeleteMapping(value="/authenticate/username",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -190,6 +275,11 @@ public class LoginServiceController {
     }
 
 
+
+    @ApiOperation(
+            value = "DELETE request, passing Admin Info, for 'deleting' a Customer stored in MongoDB with info in HTTP request ",
+            response = ResponseEntity.class,
+            tags = "DELETECustomerByDAONestedEmail")
     @DeleteMapping(value="/authenticate/email",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -202,6 +292,12 @@ public class LoginServiceController {
         return this.authenticator.processRequestDeleteUserByEmail(rol, rolname, rolpassword, inputDAO.getUserAccount().getEmail());
     }
 
+
+
+    @ApiOperation(
+            value = "PATCH request, passing Admin Info, for 'patching' a Customer name stored in MongoDB through arguments ",
+            response = ResponseEntity.class,
+            tags = "PATCHCustomerUpdateUsernameArguments")
     @PatchMapping(value="/authenticate/username/{oldUsername}/{newUsername}",
             consumes =  MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -215,6 +311,12 @@ public class LoginServiceController {
         return this.authenticator.processRequestUpdateName(rol, rolname, rolpassword, oldUsername, newUsername);
     }
 
+
+
+    @ApiOperation(
+            value = "PATCH request, passing Admin Info, for 'patching' a Customer name stored in MongoDB through DAO ",
+            response = ResponseEntity.class,
+            tags = "PATCHCustomerUpdateUsernameDAO")
     @PatchMapping(value="/authenticate/username",
             consumes =  MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -228,6 +330,12 @@ public class LoginServiceController {
         return this.authenticator.processRequestUpdateName(rol, rolname, rolpassword, inputDAO.getUsername(), inputDAO.getNewProperty());
     }
 
+
+
+    @ApiOperation(
+            value = "PATCH request, passing Admin Info, for 'patching' a Customer email stored in MongoDB through arguments ",
+            response = ResponseEntity.class,
+            tags = "PATCHCustomerUpdateUserEmailArguments")
     @PatchMapping(value="/authenticate/email/{username}/{newEmail}",
             consumes =  MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -241,6 +349,12 @@ public class LoginServiceController {
         return this.authenticator.processRequestUpdateNewEmail(rol, rolname, rolpassword, username, newUserEmail);
     }
 
+
+
+    @ApiOperation(
+            value = "PATCH request, passing Admin Info, for 'patching' a Customer email stored in MongoDB through HTTP request Body ",
+            response = ResponseEntity.class,
+            tags = "PATCHCustomerUpdateEmailDAO")
     @PatchMapping(value="/authenticate/email",
             consumes =  MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -254,6 +368,11 @@ public class LoginServiceController {
     }
 
 
+
+    @ApiOperation(
+            value = "PATCH request, passing Admin Info, for 'patching' a Customer password stored in MongoDB through arguments ",
+            response = ResponseEntity.class,
+            tags = "PATCHCustomerUpdatePasswordArguments")
     @PatchMapping(value="/authenticate/password/{username}/{newPassword}",
             consumes =  MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -268,6 +387,11 @@ public class LoginServiceController {
     }
 
 
+
+    @ApiOperation(
+            value = "PATCH request, passing Admin Info, for 'patching' a Customer password stored in MongoDB through Http request Body ",
+            response = ResponseEntity.class,
+            tags = "PATCHCustomerUpdatePassworDAO")
     @PatchMapping(value="/authenticate/password",
             consumes =  MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)

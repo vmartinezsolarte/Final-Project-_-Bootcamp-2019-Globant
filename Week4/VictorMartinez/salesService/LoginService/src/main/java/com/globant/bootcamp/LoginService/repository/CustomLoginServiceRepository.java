@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 
-@Component
+@Repository
 public class CustomLoginServiceRepository implements LoginServiceRepository {
 
     @Autowired

@@ -16,7 +16,7 @@ public class AccountMultiplDAO_LoginService {
         super();
         this.message = (message == null) ? "No Message" : message;
         this.lastResult = (result == null) ? "No Result " : result;
-        this.accountsList = (accountsList == null) ? null : accountsList;
+        this.accountsList = accountsList;
     }
 
     public String getMessage() {

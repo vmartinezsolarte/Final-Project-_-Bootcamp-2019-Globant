@@ -1,5 +1,6 @@
 package com.globant.bootcamp.LoginService.Base;
 
+
 import com.globant.bootcamp.LoginService.LoginServiceApplication;
 import com.globant.bootcamp.LoginService.business.Authenticator;
 import com.globant.bootcamp.LoginService.configuration.ServicesImpl;
@@ -30,7 +31,9 @@ import static org.mockito.ArgumentMatchers.any;
 @SpringBootTest(classes = LoginServiceApplication.class)
 public abstract class BaseClass {
 
-    @Autowired
+    public BaseClass(){}
+
+    @MockBean
     private LoginServiceController loginServiceController;
 
     @MockBean
@@ -63,7 +66,7 @@ public abstract class BaseClass {
 
         Mockito.when(dataSource.getPassWord("Andres")).thenReturn("1234");
 
-        Mockito.when(services.correctSyntaxEmail(any(String.class))).thenReturn(true);
+        Mockito.when(services.correctSyntaxEmail("an@un.edu.co")).thenReturn(true);
 
         Mockito.when(services.correctSyntaxPassword(any(String.class))).thenReturn(true);
 

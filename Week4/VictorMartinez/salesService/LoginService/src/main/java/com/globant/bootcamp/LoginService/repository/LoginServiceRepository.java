@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 
-@Repository
+
 public interface LoginServiceRepository {
 
     Account getAccountByName(final String username);

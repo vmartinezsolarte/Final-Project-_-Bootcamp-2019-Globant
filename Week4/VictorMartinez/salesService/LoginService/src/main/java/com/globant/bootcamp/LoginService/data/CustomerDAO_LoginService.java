@@ -16,7 +16,7 @@ public class CustomerDAO_LoginService {
         super();
         this.message = (message == null) ? "No Message" : message;
         this.lastResult = (result == null) ? "No Result " : result;
-        this.customerAccount = (customerAccount == null) ? null : customerAccount;
+        this.customerAccount = customerAccount;
     }
 
     public String getMessage() {

@@ -1,32 +1,50 @@
 package com.globant.bootcamp.LoginService.domain;
 
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Entity
 public class Products implements Serializable {
 
-
     @Id
-    @GeneratedValue
+    @NotNull
+    @ApiModelProperty(notes = "Id of the Product",name="ProductID",required=true,value="test ProductID")
     private Long id;
 
+    @NotNull
+    @ApiModelProperty(notes = "Brand of the Product",name="ProductBrand",required=true,value="test ProductBrand")
     private String brand;
 
+    @NotNull
+    @ApiModelProperty(notes = "Category of the Product",name="ProductCategory",required=true,value="test ProductCategory")
     private String category;
 
+    @NotNull
+    @ApiModelProperty(notes = "Producer of the Product",name="ProductEnterprise",required=true,value="test ProductEnterprise")
     private String enterprise;
 
+    @NotNull
+    @ApiModelProperty(notes = "Expiration Date of the Product",name="ProductExpirationDate",required=true,value="test ProductExpirationDate")
     private String expirationDate;
 
+    @NotNull
+    @ApiModelProperty(notes = "Name of the Product",name="ProductName",required=true,value="test ProductName")
     private String name;
 
+    @NotNull
+    @ApiModelProperty(notes = "Price of the Product",name="ProductPrice",required=true,value="test ProductPrice")
     private String price;
 
+    @NotNull
+    @ApiModelProperty(notes = "Date of the Product fabrication",name="ProductProductionDate",required=true,value="test ProductProductionDate")
     private String productionDate;
 
+
+    @ApiModelProperty(notes = "Reference of Product",name="ProductReference",value="test ProductReference")
     private String reference;
 
     public Products() {}

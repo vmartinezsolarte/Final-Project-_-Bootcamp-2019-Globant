@@ -1,9 +1,21 @@
 package com.globant.bootcamp.LoginService.domain;
 
+import io.swagger.annotations.ApiModelProperty;
+
+import javax.validation.constraints.NotNull;
+
 public class Account {
 
+    @ApiModelProperty(notes = "username of customer",name="usernameUserAccount",required=true,value="test AccountUsername")
+    @NotNull
     private String username;
+
+    @ApiModelProperty(notes = "password of customer",name="passwordUserAccount",required=true,value="test AccountPassword")
+    @NotNull
     private String password;
+
+    @ApiModelProperty(notes = "email of customer",name="emailUserAccount",required=false,value="test AccountEmail")
+    @NotNull
     private String email;
 
     public Account() { }

@@ -1,8 +1,8 @@
 rootProject.name = 'salesService'
 
-include 'BankService'
-include 'ClientService'
+//include 'BankService'
+//include 'ClientService'
 include 'LoginService'
-include 'ProductService'
-include 'PublicityService'
+//include 'ProductService'
+//include 'PublicityService'
 include 'TestSaleService'
