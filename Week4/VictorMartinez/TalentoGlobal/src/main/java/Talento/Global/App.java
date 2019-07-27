@@ -13,7 +13,6 @@ public class App {
     public static void main(String [] args) throws invalidInputValues {
 
         List<TestCase> testCases = getTestCases("src/main/java/Talento/Global/Repository/TestCase.csv");
-
         DataProcessing.printTestCases(testCases);
         System.out.print("ended");
     }
