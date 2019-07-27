@@ -13,5 +13,6 @@ public interface CustomerRepository extends MongoRepository<Customer,String>, Cu
     Customer findByUsername(String username);
     Customer findByFirstname(String firstname);
     Customer findByEmail(String email);
+    Customer updateLastname(String lastname, String newLastName);
 
 }

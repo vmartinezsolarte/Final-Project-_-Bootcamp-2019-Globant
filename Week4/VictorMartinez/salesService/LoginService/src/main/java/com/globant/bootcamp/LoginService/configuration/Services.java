@@ -23,7 +23,7 @@ public interface Services {
     Account processRequestUpdateName(final String username, final String newProperty);
     Account processRequestUpdateEmail(final String username, final String newProperty);
     Account processRequestUpdatePassword(final String username, final String newProperty);
-    Customer getCustomerInfoByUsername(final String username);
+    //Customer getCustomerInfoByUsername(final String username);
 
 }
 

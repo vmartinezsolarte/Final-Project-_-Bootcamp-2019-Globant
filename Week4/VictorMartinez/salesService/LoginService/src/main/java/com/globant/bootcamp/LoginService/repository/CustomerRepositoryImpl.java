@@ -5,12 +5,19 @@ import com.globant.bootcamp.LoginService.domain.Customer;
 import com.mongodb.WriteResult;
 import com.mongodb.client.result.UpdateResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class CustomerRepositoryImpl implements CustomerRepositoryCustom {
@@ -32,4 +39,5 @@ public class CustomerRepositoryImpl implements CustomerRepositoryCustom {
         query.addCriteria(Criteria.where("id").is(result.getModifiedCount()));
         return mongoTemplate.find(getCustomer, Customer.class).get(0);
     }
+
 }

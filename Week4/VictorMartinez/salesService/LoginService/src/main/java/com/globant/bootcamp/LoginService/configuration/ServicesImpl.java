@@ -17,15 +17,19 @@ import static com.globant.bootcamp.LoginService.utils.UtilConstants.*;
 public class ServicesImpl implements Services {
 
 
-    @Autowired
     private LoginServiceRepository loginServiceRepository;
 
+    @Autowired
     private CustomerRepository customerRepository;
 
-    @Autowired
-    public ServicesImpl(CustomerRepository customerRepository){
 
-        this.customerRepository = customerRepository;
+
+    public ServicesImpl(){}
+
+    @Autowired
+    public ServicesImpl(LoginServiceRepository loginServiceRepository){
+        super();
+        this.loginServiceRepository = loginServiceRepository;
     }
 
 
@@ -153,7 +157,8 @@ public class ServicesImpl implements Services {
         return this.loginServiceRepository.updateAccountProperty(PROPERTY_PASSWORD, username, newProperty);
     }
 
-    @Override
+
+
     public Customer getCustomerInfoByUsername(final String username){
         return this.customerRepository.findByUsername(username);
 
