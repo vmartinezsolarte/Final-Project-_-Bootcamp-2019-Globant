@@ -41,7 +41,7 @@ public class Tools {
         boolean invalid = false;
         while(iterator.hasNext()){
             String testString = iterator.next();
-            if(testString.matches("[^\\d]*[\\d]")){
+            if(testString.matches("[^A-Za-z0-9]")){
                 invalid = true;
                 throw new invalidKeyException("Keys cannot carry numbers");
             }

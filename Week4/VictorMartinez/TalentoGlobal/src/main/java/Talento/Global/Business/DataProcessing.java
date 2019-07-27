@@ -27,7 +27,7 @@ public class DataProcessing {
 
         TreeMap<String, Integer> nameScores = testCase.getScores();
 
-        //if(!validateValues(nameScores).equals(PARAMS.VALID)){throw  new invalidInputValues("Wrong input parameters");}
+        if(!validateValues(nameScores).equals(PARAMS.VALID)){throw  new invalidInputValues("Wrong input parameters");}
 
         printMap(nameScores, testCase.getNumberScores());
 
