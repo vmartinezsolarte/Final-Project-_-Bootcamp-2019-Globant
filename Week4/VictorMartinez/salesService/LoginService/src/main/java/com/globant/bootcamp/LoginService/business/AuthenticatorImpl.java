@@ -22,12 +22,10 @@ public class AuthenticatorImpl implements  Authenticator {
     private Services serviceImpl;
 
 
-
     @Autowired
     public AuthenticatorImpl (final Services serviceImpl ){
         this.serviceImpl     =   serviceImpl;
     }
-
 
     @Override
     public boolean authenticateByName(final String username, final String password) {
@@ -221,13 +219,15 @@ public class AuthenticatorImpl implements  Authenticator {
         Account accountSearched = this.serviceImpl.getVerifiedUserAccountByName(username);
         if(accountSearched== null) throw new UserNotFoundException();
         System.out.println("Passed first DB - Data Source");
-        Customer customerSearched = this.serviceImpl.getCustomerInfoByUsername(username);
+
+       /* Customer customerSearched = this.serviceImpl.getCustomerInfoByUsername(username);
         System.out.println("User found =? "+ customerSearched.getFirstname());
         System.out.println("Testing second DB - Customer");
         return ResponseEntity.accepted()
                 .header("LogingService", "UserFound")
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(new CustomerDAO_LoginService("UserFound", "Customer", customerSearched));
+                .body(new CustomerDAO_LoginService("UserFound", "Customer", customerSearched));*/
+       return null;
     }
 
     @Override

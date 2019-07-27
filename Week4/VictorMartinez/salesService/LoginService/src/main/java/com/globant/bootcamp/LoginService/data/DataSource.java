@@ -2,6 +2,7 @@ package com.globant.bootcamp.LoginService.data;
 
 import com.globant.bootcamp.LoginService.domain.Account;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.util.List;
 
 
 @Component
+@Primary
 @Qualifier("DataSource")
 public class DataSource {
 

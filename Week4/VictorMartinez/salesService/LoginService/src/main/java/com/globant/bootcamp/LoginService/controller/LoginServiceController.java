@@ -16,16 +16,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-/*
-      usersInfo.put("Andres", new Account("Andres", "1234", "an@un.edu.co"));
-              usersInfo.put("Antonio",new Account("Antonio", "absd", "to@un.edu.co"));
-              usersInfo.put("Mike", new Account("Mike","secret", "m@ls.edu.co"));
-              usersInfo.put("Tony", new Account("Tony","Stark", "starks@tony.com"));
-              usersInfo.put("Juan", new Account("Juan","060754", "Juanloco@hotmail.com"));
-              usersInfo.put("Andrea", new Account("Andrea","I<3NY", "Andrealoca@gmail.com"));
-              usersInfo.put("Natalia", new Account("Natalia","SailorMoon", "Sailor76@exu.com"));
-              usersInfo.put("Luis", new Account("Luis", "Functional", "luchito4ever@yahoo.es"));
-*/
+
 
 @Api(value = "Swagger2LoginServiceController")
 @RestController
@@ -53,9 +44,35 @@ public class LoginServiceController {
     )
     public ResponseEntity<CustomerDAO_LoginService> getUserByNameSimple(@PathVariable String username, @PathVariable String password) {
         System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
+        System.out.println("Hey");
         return this.authenticator.processRequestByName(username, password);
     }
 
+    @GetMapping(value ="/message")
+    public String msg(){
+        return "Hey you all";
+    }
 
     @ApiOperation(
             value = "GET request, passing username n password stored in body of http request, for 'getting' Customer Data stored in MongoDB",
